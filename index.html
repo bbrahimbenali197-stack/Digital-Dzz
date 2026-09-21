@@ -99,6 +99,61 @@ header{background:linear-gradient(135deg,rgba(5,11,23,.97),rgba(10,25,45,.94));b
 .dz-note-area{min-height:180px;resize:vertical}
 @media(max-width:1000px){.dz-tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.dz-tools-grid{grid-template-columns:1fr}}
+
+/* DIGITAL DZ FINAL — thème clair + nouveau fond + boutons uniformisés */
+body{
+  background:#eef4fa;
+  color:#182230;
+  position:relative;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background-image:url('digital-dz-light-background.png');
+  background-position:center top;background-size:cover;background-attachment:fixed;
+  opacity:.20;pointer-events:none;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(247,250,253,.72),rgba(238,244,250,.93));
+  pointer-events:none;
+}
+header{background:linear-gradient(135deg,rgba(7,18,35,.98),rgba(15,35,58,.96));backdrop-filter:blur(8px)}
+main{max-width:1280px}
+.hero{
+  background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.76)),url('digital-dz-light-background.png') center/cover no-repeat;
+  color:#172334;border:1px solid #dbe5ef;box-shadow:0 16px 45px rgba(31,54,79,.14)
+}
+.hero p{color:#4c5c70}
+.card,.v5-card,.dz-card,.dz-tool-card,.v7-card,.dz-panel{
+  background:rgba(255,255,255,.94)!important;color:#182230;border-color:#dbe5ef!important;
+  box-shadow:0 8px 24px rgba(31,54,79,.08)
+}
+.v7-side{background:rgba(8,23,42,.97);border-color:#19324e}
+.v7-welcome{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(238,247,255,.95));border-color:#dbe5ef}
+.v7-welcome h2,.v7-section-head h3,.v7-card h4{color:#172334!important}
+.v7-welcome p,.v7-card p,.dz-card p,.dz-tool-card p{color:#5d6c7d!important}
+.v7-kpi{background:#f7fbff;border-color:#dbe5ef}.v7-kpi b{color:#172334}.v7-kpi span{color:#66788d}
+.v7-chip{color:#a91925;background:#fff1f3;border-color:#ffc7ce}
+.dz-input,.dz-select{background:#fff;color:#182230;border-color:#cfdbe7}
+.lesson{background:#f7fafc;color:#233246}.option{background:#fff;color:#233246;border-color:#d6e0ea}.option:hover{background:#f3f8fc}
+.dz-access-note,.v5-note{background:#f7fafc;color:#415267;border-color:#dbe5ef}
+.v5-table th,.v5-table td{border-color:#dbe5ef}
+.progress,.v5-progress,.dz-progress{background:#e1eaf2}
+.dz-notif{background:#10243d}
+footer{background:#071225}
+/* tous les boutons principaux ont la même apparence et s'alignent proprement */
+.btn,.actions .btn,.v5-card .btn,.v7-card .btn,.dz-card .btn,.dz-tool-card .btn{
+  background:#ff1f3d!important;color:#fff!important;border:1px solid #ff1f3d!important;
+  text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  min-height:44px;border-radius:10px;padding:11px 16px;font-weight:800;cursor:pointer;
+}
+.btn:hover{filter:brightness(.96);transform:translateY(-1px)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.v7-card .btn,.dz-card .btn,.dz-tool-card .btn{width:auto;min-width:150px}
+.v7-cards,.dz-grid,.dz-tools-grid{align-items:stretch}
+.v7-card,.dz-card,.dz-tool-card{display:flex;flex-direction:column}
+.v7-card .btn,.dz-card .btn,.dz-tool-card .btn{margin-top:auto}
+
 </style>
 </head>
 <body>
