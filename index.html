@@ -50,6 +50,7 @@ main{max-width:1200px;margin:auto;padding:35px 18px 80px}.hero{background:#11182
 <div class="modules" id="moduleGrid"></div>
 </section>
 
+<div id="resumeBox" class="card" style="display:none;margin-bottom:18px"><h3>Reprendre votre test</h3><p>Votre progression est enregistrée sur cet appareil.</p><button class="btn" onclick="resumeQuiz()">Reprendre là où vous vous êtes arrêté →</button></div>
 <section id="tests">
 <h2 class="section-title">160 tests interactifs</h2>
 <p class="sub">140 questions liées aux 28 modules + 20 questions d'examen final.</p>
@@ -125,8 +126,12 @@ function openResource(type){
 }
 
 let qi=0, qScore=0, qAnswered=false, quizPool=[];
-function startQuiz(startIndex=0){closeModal();quizPool=questions;qi=Math.max(0,startIndex);qScore=0;qAnswered=false;scrollToId('tests');renderQuestion();}
-function startModuleQuiz(moduleId){closeModal();quizPool=questions.filter(q=>q.module==='Module '+moduleId);qi=0;qScore=0;qAnswered=false;scrollToId('tests');renderQuestion();}
+const QUIZ_STATE_KEY='digitaldz_quiz_state_v2';
+function startQuiz(startIndex=0){closeModal();quizPool=questions;qi=Math.max(0,startIndex);qScore=0;qAnswered=false;saveQuizState();scrollToId('tests');renderQuestion();}
+function startModuleQuiz(moduleId){closeModal();quizPool=questions.filter(q=>q.module==='Module '+moduleId);qi=0;qScore=0;qAnswered=false;saveQuizState();scrollToId('tests');renderQuestion();}
+function saveQuizState(){localStorage.setItem(QUIZ_STATE_KEY,JSON.stringify({qi,qScore,qAnswered,mode:quizPool.length===questions?'all':'module',poolLength:quizPool.length}));}
+function resumeQuiz(){const raw=localStorage.getItem(QUIZ_STATE_KEY);if(!raw)return false;try{const st=JSON.parse(raw);if(st.mode!=='all'||st.poolLength!==questions.length||st.qi<0||st.qi>=questions.length)return false;quizPool=questions;qi=st.qi;qScore=st.qScore||0;qAnswered=false;scrollToId('tests');renderQuestion();return true;}catch(e){return false;}}
+function clearQuizState(){localStorage.removeItem(QUIZ_STATE_KEY);}
 function renderQuestion(){
  if(!quizPool.length)return;
  if(qi>=quizPool.length){showResult();return;}
@@ -147,15 +152,18 @@ function checkAnswer(){
  document.getElementById('feedback').className='feedback '+(ok?'ok':'bad');
  document.getElementById('feedback').innerHTML=(ok?'✅ Bonne réponse. ':'❌ Réponse incorrecte. ')+q.exp+`<br><br><button class="btn" onclick="nextQuestion()">${qi===quizPool.length-1?'Voir mon résultat':'Question suivante →'}</button>`;
  localStorage.setItem('digitaldz_last_score',JSON.stringify({score:qScore,total:quizPool.length,date:new Date().toISOString()}));
+ saveQuizState();
 }
-function nextQuestion(){qi++;renderQuestion();}
+function nextQuestion(){qi++;qAnswered=false;saveQuizState();renderQuestion();}
 function showResult(){
  document.getElementById('quizBar').style.width='100%';
  const pct=Math.round(qScore/quizPool.length*100);
  document.getElementById('quizMeta').innerHTML='<b>Résultat</b>';
- document.getElementById('quizArea').innerHTML=`<div class="card"><h2>${qScore} / ${quizPool.length}</h2><p style="font-size:22px;font-weight:900">${pct}%</p><p>${pct>=70?'Bravo : tu as atteint le seuil indicatif de 70 %.':'Continue à revoir les cours puis retente le test.'}</p><button class="btn" onclick="startQuiz(0)">Recommencer les 160 tests</button></div>`;
+ document.getElementById('quizArea').innerHTML=`<div class="card"><h2>${qScore} / ${quizPool.length}</h2><p style="font-size:22px;font-weight:900">${pct}%</p><p>${pct>=70?'Bravo : tu as atteint le seuil indicatif de 70 %.':'Continue à revoir les cours puis retente le test.'}</p><button class="btn" onclick="startQuiz(0)">Recommencer les 160 tests</button></div>`;clearQuizState();
 }
 const grid=document.getElementById('moduleGrid');
 grid.innerHTML=modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="pill">Module ${m.id}</span><h3>${m.title}</h3><p>${m.goal}</p><div class="link">Ouvrir le cours →</div></div>`).join('');
+
+window.addEventListener('load',()=>{try{const st=JSON.parse(localStorage.getItem(QUIZ_STATE_KEY)||'null');if(st&&st.mode==='all'&&st.qi>=0&&st.qi<questions.length){const b=document.getElementById('resumeBox');if(b)b.style.display='block';}}catch(e){}});
 </script>
 </body></html>
