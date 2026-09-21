@@ -130,7 +130,7 @@ const QUIZ_STATE_KEY='digitaldz_quiz_state_v2';
 function startQuiz(startIndex=0){closeModal();quizPool=questions;qi=Math.max(0,startIndex);qScore=0;qAnswered=false;saveQuizState();scrollToId('tests');renderQuestion();}
 function startModuleQuiz(moduleId){closeModal();quizPool=questions.filter(q=>q.module==='Module '+moduleId);qi=0;qScore=0;qAnswered=false;saveQuizState();scrollToId('tests');renderQuestion();}
 function saveQuizState(){localStorage.setItem(QUIZ_STATE_KEY,JSON.stringify({qi,qScore,qAnswered,mode:quizPool.length===questions?'all':'module',poolLength:quizPool.length}));}
-function resumeQuiz(){const raw=localStorage.getItem(QUIZ_STATE_KEY);if(!raw)return false;try{const st=JSON.parse(raw);if(st.mode!=='all'||st.poolLength!==questions.length||st.qi<0||st.qi>=questions.length)return false;quizPool=questions;qi=st.qi;qScore=st.qScore||0;qAnswered=false;scrollToId('tests');renderQuestion();return true;}catch(e){return false;}}
+function resumeQuiz(){const raw=localStorage.getItem(QUIZ_STATE_KEY);if(!raw)return false;try{const st=JSON.parse(raw);if(st.mode!=='all'||st.poolLength!==questions.length||st.qi<0||st.qi>=questions.length)return false;quizPool=questions;qi=st.qAnswered ? st.qi+1 : st.qi;qScore=st.qScore||0;qAnswered=false;saveQuizState();scrollToId('tests');renderQuestion();return true;}catch(e){return false;}}
 function clearQuizState(){localStorage.removeItem(QUIZ_STATE_KEY);}
 function renderQuestion(){
  if(!quizPool.length)return;
@@ -164,6 +164,6 @@ function showResult(){
 const grid=document.getElementById('moduleGrid');
 grid.innerHTML=modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="pill">Module ${m.id}</span><h3>${m.title}</h3><p>${m.goal}</p><div class="link">Ouvrir le cours →</div></div>`).join('');
 
-window.addEventListener('load',()=>{try{const st=JSON.parse(localStorage.getItem(QUIZ_STATE_KEY)||'null');if(st&&st.mode==='all'&&st.qi>=0&&st.qi<questions.length){const b=document.getElementById('resumeBox');if(b)b.style.display='block';}}catch(e){}});
+window.addEventListener('load',()=>{try{const st=JSON.parse(localStorage.getItem(QUIZ_STATE_KEY)||'null');if(st&&st.mode==='all'&&st.qi>=0&&st.qi<questions.length){const b=document.getElementById('resumeBox');if(b)b.style.display='block';setTimeout(()=>resumeQuiz(),150);}}catch(e){}});
 </script>
 </body></html>
