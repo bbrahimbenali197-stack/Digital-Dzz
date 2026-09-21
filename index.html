@@ -154,6 +154,22 @@ footer{background:#071225}
 .v7-card,.dz-card,.dz-tool-card{display:flex;flex-direction:column}
 .v7-card .btn,.dz-card .btn,.dz-tool-card .btn{margin-top:auto}
 
+
+/* MODULES — style cartes claires, lisibles et organisees */
+.modules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.module-card{position:relative;display:flex;flex-direction:column;min-height:270px;padding:22px!important;background:rgba(255,255,255,.94)!important;border:1px solid #dce5ef!important;border-radius:18px!important;box-shadow:0 8px 24px rgba(31,55,86,.10)!important;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s;overflow:hidden}
+.module-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(31,55,86,.16)!important;border-color:#c8d6e6!important;background:#fff!important}
+.module-card .module-top{display:flex;align-items:center;gap:14px;margin-bottom:13px}
+.module-card .module-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex:0 0 54px;box-shadow:0 5px 12px rgba(0,0,0,.10)}
+.module-card .pill{background:#eef3f9!important;color:#18324d!important;border:0!important;border-radius:999px!important;font-size:11px!important;font-weight:900!important;padding:7px 11px!important}
+.module-card h3{margin:0!important;color:#172b43!important;font-size:20px!important;line-height:1.18!important}
+.module-card p{margin:0!important;color:#607086!important;font-size:14px!important;line-height:1.45!important;flex:1}
+.module-card .link{display:flex;align-items:center;justify-content:center;margin-top:18px;padding:12px 14px;border-radius:10px;background:#ff243b;color:#fff!important;font-weight:900;text-decoration:none;min-height:44px}
+.module-card .link:hover{background:#e91d33}
+.module-card .module-accent{position:absolute;left:0;top:0;bottom:0;width:4px;background:#ff243b}
+@media(max-width:900px){.modules{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.modules{grid-template-columns:1fr}.module-card{min-height:245px;padding:18px!important}.module-card h3{font-size:18px!important}}
+
 </style>
 </head>
 <body>
@@ -439,7 +455,7 @@ function openModal(html){document.getElementById('modalContent').innerHTML=html;
 function closeModal(){document.getElementById('modal').classList.remove('show');document.body.style.overflow='';}
 function backdropClose(e){if(e.target.id==='modal')closeModal();}
 function openModules(){
-  openModal('<h2>Les 28 cours DIGITAL DZ</h2><p class="small">Cliquez sur un cours pour l’ouvrir.</p><div class="modules">'+modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="pill">Module ${m.id}</span><h3>${m.title}</h3><p>${m.goal}</p></div>`).join('')+'</div>');
+  openModal('<h2>Les 28 cours DIGITAL DZ</h2><p class="small">Cliquez sur un cours pour l’ouvrir.</p><div class="modules">'+modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="module-accent" style="background:${moduleColors[m.id-1]}"></span><div class="module-top"><div class="module-icon" style="background:${moduleColors[m.id-1]}">${moduleIcons[m.id-1]}</div><span class="pill">Module ${m.id}</span></div><h3>${m.title}</h3><p>${m.goal}</p><div class="link">Ouvrir le cours →</div></div>`).join('')+'</div>');
 }
 function openModule(id){
  const m=modules.find(x=>x.id===id);
@@ -571,7 +587,9 @@ function showResult(){
  document.getElementById('quizArea').innerHTML=`<div class="card"><h2>${qScore} / ${quizPool.length}</h2><p style="font-size:22px;font-weight:900">${pct}%</p><p>${pct>=70?'Bravo : tu as atteint le seuil indicatif de 70 %.':'Continue à revoir les cours puis retente le test.'}</p><button class="btn" onclick="startQuiz(0)">Recommencer les 160 tests</button></div>`;clearQuizState();
 }
 const grid=document.getElementById('moduleGrid');
-grid.innerHTML=modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="pill">Module ${m.id}</span><h3>${m.title}</h3><p>${m.goal}</p><div class="link">Ouvrir le cours →</div></div>`).join('');
+const moduleIcons=['📈','🎯','🧠','🤖','🎨','💡','🏷️','🛍️','👤','💳','💼','🧰','📁','👥','📸','🎬','💬','🌐','🚀','🔎','📣','📝','✉️','💰','🛡️','📊','⚙️','🏆'];
+const moduleColors=['#ef233c','#2477e8','#22b573','#8b3dff','#ff7a00','#12a8b4','#f0a900','#8e44ad','#d62f83','#ef233c','#2477e8','#22b573','#8b3dff','#ff7a00','#12a8b4','#f0a900','#8e44ad','#d62f83','#ef233c','#2477e8','#22b573','#8b3dff','#ff7a00','#12a8b4','#f0a900','#8e44ad','#d62f83','#ef233c'];
+grid.innerHTML=modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="module-accent" style="background:${moduleColors[m.id-1]}"></span><div class="module-top"><div class="module-icon" style="background:${moduleColors[m.id-1]}">${moduleIcons[m.id-1]}</div><span class="pill">Module ${m.id}</span></div><h3>${m.title}</h3><p>${m.goal}</p><div class="link">Ouvrir le cours →</div></div>`).join('');
 
 window.addEventListener('load',()=>{try{const st=JSON.parse(localStorage.getItem(QUIZ_STATE_KEY)||'null');if(st&&st.mode==='all'&&st.qi>=0&&st.qi<questions.length){const b=document.getElementById('resumeBox');if(b)b.style.display='block';setTimeout(()=>resumeQuiz(),150);}}catch(e){}});
 
