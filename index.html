@@ -17,22 +17,254 @@ main{max-width:1200px;margin:auto;padding:35px 18px 80px}.hero{background:#11182
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 5px 18px #00000008}
 .feature{cursor:pointer;transition:.18s}.feature:hover{transform:translateY(-2px);box-shadow:0 10px 25px #00000012}.num{font-size:30px;color:var(--red);font-weight:900}.link{color:#b51f2a;font-weight:800;margin-top:18px}
 .modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.module-card{cursor:pointer}.module-card h3{margin:6px 0}.module-card p{color:var(--muted);font-size:14px}
-.modal{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:18px;z-index:30}.modal.show{display:flex}.modal-box{background:#fff;max-width:900px;width:100%;max-height:90vh;overflow:auto;border-radius:20px;padding:26px;position:relative}.close{position:absolute;right:16px;top:12px;background:#f0f1f3;border:0;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:20px}.pill{display:inline-block;background:#fff0f1;color:#a91925;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;margin:3px}.lesson{background:#f8f9fb;border-left:4px solid var(--red);padding:12px 14px;margin:10px 0;border-radius:8px}.quizbox{max-width:850px;margin:auto}.option{display:block;padding:13px;border:1px solid var(--line);border-radius:12px;margin:9px 0;cursor:pointer}.option:hover{background:#fafafa}.option input{margin-right:8px}.progress{height:10px;background:#e7e9ed;border-radius:20px;overflow:hidden;margin:15px 0}.bar{height:100%;background:var(--red);width:0}.feedback{padding:13px;border-radius:12px;margin-top:12px}.ok{background:#eaf8ef}.bad{background:#fff0f0}.small{font-size:13px;color:var(--muted)}footer{background:#111821;color:#dfe4ea;padding:35px 18px;text-align:center}
+.modal{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:18px;z-index:30}.modal.show{display:flex}.modal-box{background:#fff;max-width:900px;width:100%;max-height:90vh;overflow:auto;border-radius:20px;padding:26px;position:relative}.close{position:absolute;right:16px;top:12px;background:#f0f1f3;border:0;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:20px}.pill{display:inline-block;background:#fff0f1;color:#a91925;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;margin:3px}.lesson{background:#f8f9fb;border-left:4px solid var(--red);padding:12px 14px;margin:10px 0;border-radius:8px}.quizbox{max-width:850px;margin:auto}.option{display:block;padding:13px;border:1px solid var(--line);border-radius:12px;margin:9px 0;cursor:pointer}.option:hover{background:#fafafa}.option input{margin-right:8px}.progress{height:10px;background:#e7e9ed;border-radius:20px;overflow:hidden;margin:15px 0}.bar{height:100%;background:var(--red);width:0}.feedback{padding:13px;border-radius:12px;margin-top:12px}.ok{background:#eaf8ef}.bad{background:#fff0f0}.small{font-size:13px;color:var(--muted)}
+/* DIGITAL DZ V5 — enrichissements */
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.actions .btn{margin:0}
+.v5-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.v5-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 5px 18px #00000008}
+.v5-card h3{margin-top:0}.v5-icon{font-size:30px}.v5-list{padding-left:20px}.v5-list li{margin:8px 0}
+.v5-progress{height:14px;background:#e7e9ed;border-radius:20px;overflow:hidden;margin:10px 0}
+.v5-progress-bar{height:100%;background:var(--red);width:0;transition:.25s}
+.v5-check{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line)}
+.v5-check input{margin-top:3px;width:18px;height:18px}
+.v5-table{width:100%;border-collapse:collapse}.v5-table th,.v5-table td{padding:9px;border-bottom:1px solid var(--line);text-align:left}
+.v5-badge{display:inline-block;background:#fff0f1;color:#a91925;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800}
+.v5-note{background:#f8f9fb;border-left:4px solid var(--red);padding:12px 14px;border-radius:8px}
+@media(max-width:700px){.actions{flex-direction:column}.actions .btn{width:100%}.v5-table{font-size:13px}}
+footer{background:#111821;color:#dfe4ea;padding:35px 18px;text-align:center}
 @media(max-width:700px){.nav{align-items:flex-start}.nav nav{display:none}.hero{padding:30px 22px}.modal-box{padding:20px}}
+
+/* V5 — style uniforme pour tous les boutons */
+.btn,
+.btn.secondary,
+.actions .btn,
+.v5-card .btn{
+  background:var(--red) !important;
+  color:#fff !important;
+  border:1px solid var(--red) !important;
+  text-decoration:none !important;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  border-radius:10px;
+  font-weight:800;
+  padding:12px 18px;
+  cursor:pointer;
+}
+.btn:hover,
+.btn.secondary:hover,
+.actions .btn:hover,
+.v5-card .btn:hover{
+  opacity:.9;
+  transform:translateY(-1px);
+}
+
+
+/* DIGITAL DZ V5 — fond technologie premium */
+body{
+  background:
+    linear-gradient(rgba(3,7,18,.88),rgba(3,7,18,.94)),
+    url('digital-dz-tech-background.png') center top / cover fixed no-repeat;
+  background-color:#030712;
+}
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(3,7,18,.96) 0%,rgba(3,7,18,.82) 48%,rgba(3,7,18,.48) 100%),
+    url('digital-dz-tech-background.png') center / cover no-repeat;
+  border-bottom:1px solid rgba(229,43,54,.35);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 78% 38%,rgba(229,43,54,.18),transparent 32%);
+}
+.hero > *{position:relative;z-index:1}
+section, .card, .module-card{
+  backdrop-filter:blur(6px);
+}
+
+
+/* DIGITAL DZ V5 — dashboard premium inspiré du style demandé */
+:root{
+  --red:#ff1f3d;
+  --dark:#050b17;
+  --ink:#eef3ff;
+  --muted:#aab5ca;
+  --bg:#030817;
+  --card:#071225;
+  --line:#1b2b45;
+}
+body{
+  background:
+    radial-gradient(circle at 80% 10%,rgba(255,31,61,.10),transparent 28%),
+    linear-gradient(rgba(3,8,23,.90),rgba(3,8,23,.96)),
+    url('digital-dz-dashboard-style.png') center top / cover fixed no-repeat;
+  background-color:#030817;
+  color:var(--ink);
+}
+.topbar{
+  height:76px;
+  padding:0 28px 0 270px;
+  background:rgba(3,8,20,.94);
+  border-bottom:1px solid #182943;
+  box-shadow:0 8px 30px #0008;
+}
+.topbar .nav{max-width:none;height:76px}
+.brand-wrap{min-width:180px}
+.brand{font-size:24px;letter-spacing:-.5px}
+.top-search{
+  width:min(470px,42vw);
+  background:#0b1930;
+  border:1px solid #203451;
+  border-radius:12px;
+  padding:11px 16px;
+  color:#91a1bb;
+  font-size:13px;
+}
+.learner{font-size:13px;color:#cbd5e7}
+.sidebar{
+  position:fixed;
+  z-index:20;
+  left:0;top:0;bottom:0;
+  width:245px;
+  padding:22px 12px;
+  background:rgba(3,9,20,.97);
+  border-right:1px solid #182943;
+  box-shadow:12px 0 35px #0006;
+  overflow:auto;
+}
+.side-logo{
+  font-size:24px;font-weight:900;
+  padding:5px 16px 24px;
+  letter-spacing:-.5px;
+}
+.side-logo span{color:var(--red)}
+.sidebar a{
+  display:flex;align-items:center;gap:13px;
+  color:#dce5f5;text-decoration:none;
+  padding:11px 14px;margin:3px 0;
+  border-radius:10px;font-size:14px;
+  transition:.18s;
+}
+.sidebar a:hover,.sidebar .side-active{
+  background:linear-gradient(90deg,#c70e2b,#ff1f3d);
+  color:#fff;
+  box-shadow:0 7px 20px #ff1f3d33;
+}
+main{
+  max-width:none;
+  margin:0;
+  margin-left:245px;
+  padding:28px 34px 80px;
+}
+.hero{
+  max-width:1280px;
+  margin:0 auto 28px;
+  min-height:410px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:
+    linear-gradient(90deg,rgba(3,8,20,.96) 0%,rgba(3,8,20,.83) 48%,rgba(3,8,20,.28) 100%),
+    url('digital-dz-dashboard-style.png') right center / cover no-repeat;
+  border:1px solid #203451;
+  border-radius:20px;
+  box-shadow:0 18px 55px #0008;
+}
+.hero h1{max-width:720px}
+.hero p{color:#c8d2e4}
+.section-title{color:#f5f7fb}
+.sub{color:#91a1bb}
+.grid,.v5-grid,.modules{
+  max-width:1280px;
+  margin-left:auto;margin-right:auto;
+}
+.card,.v5-card,.module-card{
+  background:rgba(5,15,31,.88);
+  border:1px solid #1d304c;
+  color:#edf3ff;
+  box-shadow:0 12px 32px #0007;
+}
+.card p,.v5-card p,.module-card p{color:#9eabc0}
+.card:hover,.v5-card:hover,.module-card:hover{
+  border-color:#ff1f3d77;
+  box-shadow:0 15px 35px #0009;
+}
+.num,.link{color:#ff4058}
+.v5-progress,.progress{background:#14243d}
+.v5-note{background:#0b1930;border-left-color:var(--red);color:#dbe4f2}
+.v5-table th,.v5-table td{border-color:#1b2d47;color:#dce5f5}
+footer{margin-left:245px;background:#030817;border-top:1px solid #182943}
+.modal-box{background:#071225;color:#edf3ff;border:1px solid #263b5c}
+.close{background:#13233b;color:#fff}
+.lesson{background:#0b1930}
+.option{border-color:#263b5c;background:#081529}
+.option:hover{background:#10213a}
+.pill,.v5-badge{background:#35101a;color:#ff7181}
+@media(max-width:900px){
+  .sidebar{width:205px}
+  .topbar{padding-left:220px}
+  main{margin-left:205px;padding:22px 18px 60px}
+  footer{margin-left:205px}
+  .top-search{display:none}
+}
+@media(max-width:700px){
+  .sidebar{display:none}
+  .topbar{padding:0 16px}
+  .topbar .nav{height:68px}
+  main{margin-left:0;padding:18px 12px 55px}
+  footer{margin-left:0}
+  .hero{min-height:520px;padding:28px 20px;background-position:center}
+  .hero h1{font-size:38px}
+  .learner{display:none}
+}
+
 </style>
 </head>
 <body>
-<header><div class="nav"><div><div class="brand">DIGITAL <span>DZ</span></div><div class="tag">Apprendre • Créer • Vendre • Progresser</div></div><nav><button onclick="scrollToId('programme')">Programme</button><button onclick="scrollToId('tests')">Tests</button></nav></div></header>
+<aside class="sidebar">
+  <div class="side-logo">DIGITAL <span>DZ</span></div>
+  <a class="side-active" href="#accueil">⌂ <span>Accueil</span></a>
+  <a href="#espace-apprenant">♙ <span>Mon espace</span></a>
+  <a href="#programme">▤ <span>Modules</span></a>
+  <a href="#tests">☑ <span>Tests</span></a>
+  <a href="#v5-challenge">◎ <span>Missions pratiques</span></a>
+  <a href="#v5-ressources">□ <span>Ressources</span></a>
+  <a href="#espace-apprenant">⇩ <span>Téléchargements</span></a>
+  <a href="#espace-apprenant">▷ <span>Vidéos & tutoriels</span></a>
+  <a href="ressources.html">⚒ <span>Boîte à outils</span></a>
+  <a href="#v5-ressources">✦ <span>Prompts ChatGPT</span></a>
+  <a href="#v5-ressources">◇ <span>Idées de produits</span></a>
+  <a href="#v5-ressources">▣ <span>Services freelance</span></a>
+  <a href="#v5-challenge">▣ <span>Challenge 30 jours</span></a>
+  <a href="#espace-apprenant">◔ <span>Mon parcours</span></a>
+  <a href="#espace-apprenant">♧ <span>Attestation</span></a>
+</aside>
+<header class="topbar">
+  <div class="nav">
+    <div class="brand-wrap">
+      <div class="brand">↗ DIGITAL <span>DZ</span></div>
+      <div class="tag">Apprendre • Créer • Vendre • Progresser</div>
+    </div>
+    <div class="top-search">⌕&nbsp;&nbsp; Rechercher un module, un test, une ressource…</div>
+    <div class="learner">◯&nbsp; Bonjour, <b>Apprenant</b></div>
+  </div>
+</header>
 <main>
-<section class="hero">
+<section class="hero" id="accueil">
 <div class="pill">FORMATION DIGITALE COMPLÈTE</div>
-     <button class="bouton" onclick="window.location.href='ressources.html'">
-        🌐 Boîte à outils
-    </button>
-</a>
 <h1>Apprenez à créer des revenus en ligne, étape par étape.</h1>
 <p>28 cours pratiques, 160 questions interactives et des ressources pour passer de l'apprentissage à l'action depuis smartphone ou PC.</p>
+<div class="actions">
 <button class="btn" onclick="scrollToId('programme')">Commencer la formation</button>
+<a class="btn" href="ressources.html">🌐 Boîte à outils</a>
+<a class="btn" href="#espace-apprenant">🎓 Espace apprenant</a>
 </div>
 </section>
 
@@ -47,7 +279,67 @@ main{max-width:1200px;margin:auto;padding:35px 18px 80px}.hero{background:#11182
 <div class="card feature" onclick="openResource('models')"><div class="num">20</div><h3>Modèles Excel & Canva</h3><p>Structures à reproduire et personnaliser.</p><div class="link">Découvrir →</div></div>
 <div class="card feature" onclick="openResource('roadmap')"><div class="num">30/60/90</div><h3>Plan d'action</h3><p>Une feuille de route progressive.</p><div class="link">Voir la feuille de route →</div></div>
 <div class="card feature" onclick="openResource('project')"><div class="num">✓</div><h3>Projet final</h3><p>Un projet pratique et une attestation de progression interne.</p><div class="link">Voir le projet →</div></div>
+<div class="card feature" onclick="scrollToId('espace-apprenant')"><div class="num">V5</div><h3>🎓 Espace apprenant</h3><p>Missions, progression, téléchargements et attestation interne.</p><div class="link">Ouvrir →</div></div>
 </div>
+
+
+<section id="espace-apprenant">
+<h2 class="section-title">🎓 Espace apprenant V5</h2>
+<p class="sub">Passez de la lecture à l'action : missions, progression, ressources téléchargeables et attestation interne.</p>
+<div class="v5-grid">
+  <div class="v5-card">
+    <div class="v5-icon">📈</div><h3>Ma progression</h3>
+    <p><b id="v5MissionCount">0 / 28</b> missions terminées</p>
+    <div class="v5-progress"><div class="v5-progress-bar" id="v5MissionBar"></div></div>
+    <p id="v5MissionPct" class="small">0%</p>
+  </div>
+  <div class="v5-card">
+    <div class="v5-icon">🎯</div><h3>28 missions pratiques</h3>
+    <p>Une mission concrète pour chaque module.</p>
+    <button class="btn" onclick="openV5Missions()">Ouvrir les missions</button>
+  </div>
+  <div class="v5-card">
+    <div class="v5-icon">📥</div><h3>Téléchargements</h3>
+    <p>Modèles de suivi, prospection, revenus et contenu.</p>
+    <a class="btn" href="DIGITAL_DZ_MODELES.zip">Télécharger les modèles</a>
+  </div>
+  <div class="v5-card">
+    <div class="v5-icon">🎬</div><h3>Vidéos & tutoriels</h3>
+    <p>Approfondissez avec des ressources vidéo externes.</p>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=freelance+Canva+ChatGPT+ecommerce+Alg%C3%A9rie">Voir les tutoriels</a>
+  </div>
+  <div class="v5-card">
+    <div class="v5-icon">🏆</div><h3>Attestation interne</h3>
+    <p>Générez votre attestation de progression après votre parcours.</p>
+    <button class="btn" onclick="openV5Certificate()">Générer</button>
+  </div>
+</div>
+</section>
+
+<section id="v5-challenge">
+<h2 class="section-title">🔥 Challenge 30 jours</h2>
+<p class="sub">Un rythme simple : apprendre → pratiquer → publier/prospecter → mesurer → améliorer.</p>
+<div class="v5-card">
+<table class="v5-table">
+<tr><th>Période</th><th>Objectif</th><th>Livrable</th></tr>
+<tr><td>Jours 1–7</td><td>Niche + compétence + offre</td><td>Fiche cible + offre simple</td></tr>
+<tr><td>Jours 8–15</td><td>Créer le premier livrable</td><td>Produit/service + portfolio</td></tr>
+<tr><td>Jours 16–23</td><td>Publier et prospecter</td><td>Contenus + messages de prospection</td></tr>
+<tr><td>Jours 24–30</td><td>Mesurer et améliorer</td><td>Tableau KPI + plan d'amélioration</td></tr>
+</table>
+<p class="v5-note">Les résultats varient selon la compétence, l'offre, le marché, l'exécution et les règles des plateformes. Aucun revenu n'est garanti.</p>
+</div>
+</section>
+
+<section id="v5-ressources">
+<h2 class="section-title">🧰 Ressources rapides</h2>
+<div class="v5-grid">
+<div class="v5-card"><h3>🌐 Boîte à outils</h3><p>Fiverr, Upwork, Khamsat, Canva, ChatGPT, GitHub, Supabase et autres ressources.</p><a class="btn" href="ressources.html">Ouvrir la boîte à outils</a></div>
+<div class="v5-card"><h3>🤖 Prompts</h3><p>Prompts pour recherche, offre, contenu, prospection et organisation.</p><button class="btn" onclick="openResource('prompts')">Voir les prompts</button></div>
+<div class="v5-card"><h3>💡 50 produits</h3><p>Une banque d'idées à adapter à une niche réelle.</p><button class="btn" onclick="openResource('products')">Voir les idées</button></div>
+<div class="v5-card"><h3>💼 50 services</h3><p>Services freelance à transformer en offres concrètes.</p><button class="btn" onclick="openResource('freelance')">Voir les services</button></div>
+</div>
+</section>
 
 <section id="programme">
 <h2 class="section-title">Les 28 cours</h2>
@@ -98,7 +390,7 @@ function openModule(id){
  <h3>Le cours</h3>${m.lessons.map(x=>`<div class="lesson">${x}</div>`).join('')}
  <h3>Exercice pratique</h3><div class="lesson">${m.exercise}</div>
  <h3>Action</h3><div class="lesson">${m.action}</div>
- <div style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="startModuleQuiz(${m.id})">Tester ce module</button><button class="btn secondary" onclick="openModule(${m.id===28?1:m.id+1})">${m.id===28?'Revenir au module 1':'Module suivant →'}</button></div>`);
+ <div style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="startModuleQuiz(${m.id})">Tester ce module</button><button class="btn" onclick="openModule(${m.id===28?1:m.id+1})">${m.id===28?'Revenir au module 1':'Module suivant →'}</button></div>`);
 }
 function openResource(type){
  let title='', body='';
@@ -129,6 +421,59 @@ function openResource(type){
  else {title='Projet final DIGITAL DZ';body='<div class="lesson"><b>Objectif :</b> construire une mini-activité numérique testable.</div><ol><li>Choisir une niche et un problème.</li><li>Créer une offre ou un service.</li><li>Préparer un portfolio ou produit minimum.</li><li>Créer une page de présentation.</li><li>Publier au moins 5 contenus ou contacter des prospects.</li><li>Mesurer les résultats.</li><li>Présenter ce qui a été réalisé et ce qui sera amélioré.</li></ol><p class="small">L’attestation DIGITAL DZ est une attestation interne de progression ; elle ne constitue pas un diplôme d’État ni une certification officielle.</p>';}
  openModal(`<h2>${title}</h2>${body}`);
 }
+
+
+/* DIGITAL DZ V5 — missions + attestation */
+const V5_MISSIONS_KEY='digitaldz_v5_missions';
+const v5MissionTitles=[
+"Définir son objectif de revenus en ligne","Choisir une niche","Choisir une compétence monétisable",
+"Créer 5 prompts utiles","Créer un visuel Canva","Définir son premier produit digital",
+"Valider 10 idées de produits","Rédiger son offre","Fixer un prix","Préparer une page de vente",
+"Créer son profil freelance","Choisir 3 services freelance","Créer son portfolio","Préparer une publication Facebook",
+"Préparer 3 contenus Instagram","Créer une vidéo courte","Configurer WhatsApp Business","Créer une page web simple",
+"Construire un mini tunnel de vente","Faire une recherche de mots-clés","Préparer une publicité test",
+"Créer 7 contenus","Créer un calendrier éditorial","Préparer un e-mail de fidélisation",
+"Créer sa procédure de livraison numérique","Créer son tableau financier","Automatiser une tâche répétitive",
+"Finaliser son plan 30/60/90 jours"
+];
+let v5Done=JSON.parse(localStorage.getItem(V5_MISSIONS_KEY)||'[]');
+function saveV5(){localStorage.setItem(V5_MISSIONS_KEY,JSON.stringify(v5Done));updateV5Progress();}
+function updateV5Progress(){
+ const n=v5Done.length,p=Math.round(n/28*100);
+ const c=document.getElementById('v5MissionCount'),b=document.getElementById('v5MissionBar'),t=document.getElementById('v5MissionPct');
+ if(c)c.textContent=n+' / 28'; if(b)b.style.width=p+'%'; if(t)t.textContent=p+'%';
+}
+function openV5Missions(){
+ openModal(`<h2>🎯 Mes 28 missions pratiques</h2><p class="small">Cochez une mission quand le livrable est réellement terminé.</p>
+ <div>${v5MissionTitles.map((m,i)=>`<label class="v5-check"><input type="checkbox" ${v5Done.includes(i)?'checked':''} onchange="toggleV5Mission(${i},this.checked)"> <span><b>Mission ${i+1}</b> — ${m}</span></label>`).join('')}</div>
+ <div style="margin-top:16px"><b id="v5ModalProgress">${v5Done.length}/28</b> terminées</div>`);
+}
+function toggleV5Mission(i,checked){
+ if(checked&&!v5Done.includes(i))v5Done.push(i); else v5Done=v5Done.filter(x=>x!==i);
+ saveV5();
+ const el=document.getElementById('v5ModalProgress');if(el)el.textContent=v5Done.length+'/28 terminées';
+}
+function openV5Certificate(){
+ openModal(`<h2>🏆 Attestation de progression</h2>
+ <p class="small">Attestation interne DIGITAL DZ — non officielle et non assimilable à un diplôme.</p>
+ <input id="v5Name" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:10px" placeholder="Nom et prénom">
+ <button class="btn" style="margin-top:10px" onclick="generateV5Certificate()">Générer l'attestation</button>
+ <div id="v5CertificateResult"></div>`);
+}
+function generateV5Certificate(){
+ const name=(document.getElementById('v5Name')||{}).value?.trim();
+ if(!name){alert('Saisissez votre nom et prénom.');return;}
+ const p=Math.round(v5Done.length/28*100);
+ document.getElementById('v5CertificateResult').innerHTML=`<div class="card" style="margin-top:16px;text-align:center;border:3px solid var(--red)">
+ <div class="v5-badge">DIGITAL DZ</div><h2>ATTESTATION DE PROGRESSION</h2>
+ <p>Cette attestation est remise à</p><h2>${escapeHtmlV5(name)}</h2>
+ <p>pour avoir suivi le parcours DIGITAL DZ.</p>
+ <p><b>28 modules • 160 tests • missions pratiques</b></p>
+ <p>Progression des missions : <b>${p}%</b></p>
+ <p class="small">Attestation interne de progression. Elle ne constitue pas un diplôme, une certification officielle ni une garantie d'emploi ou de revenus.</p>
+ </div>`;
+}
+function escapeHtmlV5(x){return x.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
 
 let qi=0, qScore=0, qAnswered=false, quizPool=[];
 const QUIZ_STATE_KEY='digitaldz_quiz_state_v2';
