@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DIGITAL DZ — Formation complète</title>
+<title>DIGITAL DZ — Plateforme de formation</title>
 <style>
 :root{--red:#e52b36;--dark:#10151d;--ink:#20242b;--muted:#667085;--bg:#f6f7f9;--card:#fff;--line:#e6e8ec}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
@@ -77,106 +77,111 @@ footer{background:#111821;color:#dfe4ea;padding:35px 18px;text-align:center}
 @media(max-width:950px){.v7-shell{grid-template-columns:1fr}.v7-side{position:static}.v7-kpis{grid-template-columns:repeat(2,1fr)}.v7-cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.v7-kpis,.v7-cards{grid-template-columns:1fr}.v7-side{display:none}.v7-welcome{padding:18px}}
 
-/* DIGITAL DZ FINAL — ancien fond technologique + accès sans compte */
-:root{--red:#ff1f3d;--dark:#050b17;--ink:#eef3ff;--muted:#aab5ca;--bg:#030817;--card:rgba(7,18,37,.90);--line:#1b2b45}
-body{background:linear-gradient(rgba(3,8,23,.86),rgba(3,8,23,.94)),url('digital-dz-tech-background.png') center top/cover fixed no-repeat;color:var(--ink)}
-header{background:linear-gradient(135deg,rgba(5,11,23,.97),rgba(10,25,45,.94));border-bottom:1px solid rgba(255,31,61,.25)}
-.hero{background:linear-gradient(90deg,rgba(5,11,23,.96),rgba(7,18,37,.80)),url('digital-dz-tech-background.png') center/cover no-repeat;border:1px solid rgba(255,31,61,.28);box-shadow:0 18px 45px rgba(0,0,0,.25)}
-.card,.v5-card{background:rgba(7,18,37,.88);border-color:#1b2b45;color:var(--ink)}
-.section-title{color:#fff}.sub,.module-card p{color:var(--muted)}
-.module-card:hover{background:rgba(10,28,52,.95)}
-.modal-box{background:#071225;color:var(--ink);border:1px solid #1b2b45}.close{background:#10203a;color:#fff}.lesson{background:#0b1930;color:#dfe7f5}.option{background:#071225;color:#dfe7f5;border-color:#1b2b45}.option:hover{background:#10203a}.progress,.v5-progress{background:#17243a}.v5-note{background:rgba(255,31,61,.08);color:#dfe7f5}.pill{background:rgba(255,31,61,.12);color:#fff}.link{color:#ff7180}
-.dz-input,.dz-select{background:#020816;color:#eef3ff}.v5-table th,.v5-table td{border-color:#1b2b45}footer{background:#050b17;border-top:1px solid #1b2b45}
-.dz-access-note{margin:12px 0;padding:12px 14px;border:1px solid #1b2b45;border-radius:10px;background:rgba(255,255,255,.03);color:#b8c4d8}
-
-
-/* DIGITAL DZ — fonctions supplémentaires */
-.dz-tools-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
-.dz-tool-card{background:#071225;border:1px solid #1b2b45;border-radius:15px;padding:16px}
-.dz-tool-card h4{margin:6px 0;color:#fff}.dz-tool-card p{color:#9eabc0;font-size:13px;min-height:38px}
-.dz-timer{font-size:44px;font-weight:900;text-align:center;letter-spacing:2px;margin:15px 0;color:#fff}
-.dz-focus body{}.dz-focus .v7-side,.dz-focus .dz-sticky-actions,.dz-focus .dz-panel:not(#dz-focus-panel),.dz-focus footer{display:none!important}.dz-focus main{max-width:900px}
-.dz-note-area{min-height:180px;resize:vertical}
-@media(max-width:1000px){.dz-tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.dz-tools-grid{grid-template-columns:1fr}}
-
-/* DIGITAL DZ FINAL — thème clair + nouveau fond + boutons uniformisés */
+/* DIGITAL DZ REDESIGN — 2026: clearer hierarchy + fresh colors */
+:root{
+  --red:#ef3340;
+  --red2:#ff5a67;
+  --navy:#12233f;
+  --blue:#2563eb;
+  --cyan:#0891b2;
+  --green:#10b981;
+  --orange:#f59e0b;
+  --violet:#7c3aed;
+  --ink:#16243a;
+  --muted:#64748b;
+  --bg:#eef4fa;
+  --card:#ffffff;
+  --line:#d8e2ee;
+}
+html{scroll-behavior:smooth}
 body{
-  background:#eef4fa;
-  color:#182230;
-  position:relative;
+  background:
+    radial-gradient(circle at 12% 8%,rgba(37,99,235,.10),transparent 24%),
+    radial-gradient(circle at 88% 15%,rgba(239,51,64,.10),transparent 22%),
+    linear-gradient(180deg,#f6f9fd 0%,#eef4fa 48%,#f8fafc 100%);
+  color:var(--ink);
 }
 body::before{
-  content:"";position:fixed;inset:0;z-index:-2;
-  background-image:url('digital-dz-light-background.png');
-  background-position:center top;background-size:cover;background-attachment:fixed;
-  opacity:.20;pointer-events:none;
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:url('digital-dz-new-background.jpg') center top/cover no-repeat;
+  opacity:.055;
 }
-body::after{
-  content:"";position:fixed;inset:0;z-index:-1;
-  background:linear-gradient(180deg,rgba(247,250,253,.72),rgba(238,244,250,.93));
-  pointer-events:none;
+header{
+  background:rgba(255,255,255,.92)!important;
+  color:var(--navy)!important;
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px);
+  box-shadow:0 5px 20px rgba(18,35,63,.08)!important;
+  padding:15px 5%!important;
 }
-header{background:linear-gradient(135deg,rgba(7,18,35,.98),rgba(15,35,58,.96));backdrop-filter:blur(8px)}
-main{max-width:1280px}
-.hero{
-  background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.76)),url('digital-dz-light-background.png') center/cover no-repeat;
-  color:#172334;border:1px solid #dbe5ef;box-shadow:0 16px 45px rgba(31,54,79,.14)
+.brand{color:var(--navy)!important}.brand span{color:var(--red)!important}.tag{color:#64748b!important}
+nav button{background:#fff!important;color:var(--navy)!important;border:1px solid var(--line)!important}
+nav button:hover{border-color:var(--red)!important;color:var(--red)!important}
+main{max-width:1400px!important;padding:26px 24px 80px!important}
+.v7-shell{grid-template-columns:250px minmax(0,1fr)!important;gap:24px!important}
+.v7-side{
+  background:rgba(255,255,255,.96)!important;border:1px solid var(--line)!important;
+  box-shadow:0 14px 35px rgba(18,35,63,.08)!important;
 }
-.hero p{color:#4c5c70}
-.card,.v5-card,.dz-card,.dz-tool-card,.v7-card,.dz-panel{
-  background:rgba(255,255,255,.94)!important;color:#182230;border-color:#dbe5ef!important;
-  box-shadow:0 8px 24px rgba(31,54,79,.08)
+.v7-side h3{color:var(--navy)!important}
+.v7-group-title{color:#8290a6!important}
+.v7-link{color:#31435d!important}
+.v7-link:hover{background:#f0f5fb!important;color:var(--red)!important}
+.v7-welcome{
+  min-height:290px;
+  background:linear-gradient(90deg,rgba(8,23,46,.97) 0%,rgba(8,23,46,.88) 45%,rgba(8,23,46,.55) 100%),url('digital-dz-new-background.jpg') center/cover no-repeat!important;
+  border:0!important;box-shadow:0 18px 45px rgba(18,35,63,.16)!important;
+  padding:30px!important;
 }
-.v7-side{background:rgba(8,23,42,.97);border-color:#19324e}
-.v7-welcome{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(238,247,255,.95));border-color:#dbe5ef}
-.v7-welcome h2,.v7-section-head h3,.v7-card h4{color:#172334!important}
-.v7-welcome p,.v7-card p,.dz-card p,.dz-tool-card p{color:#5d6c7d!important}
-.v7-kpi{background:#f7fbff;border-color:#dbe5ef}.v7-kpi b{color:#172334}.v7-kpi span{color:#66788d}
-.v7-chip{color:#a91925;background:#fff1f3;border-color:#ffc7ce}
-.dz-input,.dz-select{background:#fff;color:#182230;border-color:#cfdbe7}
-.lesson{background:#f7fafc;color:#233246}.option{background:#fff;color:#233246;border-color:#d6e0ea}.option:hover{background:#f3f8fc}
-.dz-access-note,.v5-note{background:#f7fafc;color:#415267;border-color:#dbe5ef}
-.v5-table th,.v5-table td{border-color:#dbe5ef}
-.progress,.v5-progress,.dz-progress{background:#e1eaf2}
-.dz-notif{background:#10243d}
-footer{background:#071225}
-/* tous les boutons principaux ont la même apparence et s'alignent proprement */
-.btn,.actions .btn,.v5-card .btn,.v7-card .btn,.dz-card .btn,.dz-tool-card .btn{
-  background:#ff1f3d!important;color:#fff!important;border:1px solid #ff1f3d!important;
-  text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;
-  min-height:44px;border-radius:10px;padding:11px 16px;font-weight:800;cursor:pointer;
+.v7-chip{background:rgba(239,51,64,.10)!important;border-color:rgba(239,51,64,.28)!important;color:var(--red)!important}
+.v7-welcome .v7-chip{color:#fff!important;background:rgba(239,51,64,.88)!important;border-color:transparent!important}
+.v7-kpi{background:rgba(255,255,255,.10)!important;border-color:rgba(255,255,255,.16)!important;backdrop-filter:blur(6px)}
+.v7-kpi b,.v7-kpi span{color:#fff!important}
+.v7-section{margin:28px 0!important}
+.v7-section-head h3{color:var(--navy)!important}
+.v7-section-head p{color:var(--muted)!important}
+.v7-cards{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important}
+.v7-card,.v5-card,.card{
+  background:rgba(255,255,255,.96)!important;border:1px solid var(--line)!important;
+  box-shadow:0 10px 28px rgba(18,35,63,.07)!important;
 }
-.btn:hover{filter:brightness(.96);transform:translateY(-1px)}
-.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
-.v7-card .btn,.dz-card .btn,.dz-tool-card .btn{width:auto;min-width:150px}
-.v7-cards,.dz-grid,.dz-tools-grid{align-items:stretch}
-.v7-card,.dz-card,.dz-tool-card{display:flex;flex-direction:column}
-.v7-card .btn,.dz-card .btn,.dz-tool-card .btn{margin-top:auto}
-
-
-/* MODULES — style cartes claires, lisibles et organisees */
-.modules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.module-card{position:relative;display:flex;flex-direction:column;min-height:270px;padding:22px!important;background:rgba(255,255,255,.94)!important;border:1px solid #dce5ef!important;border-radius:18px!important;box-shadow:0 8px 24px rgba(31,55,86,.10)!important;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s;overflow:hidden}
-.module-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(31,55,86,.16)!important;border-color:#c8d6e6!important;background:#fff!important}
-.module-card .module-top{display:flex;align-items:center;gap:14px;margin-bottom:13px}
-.module-card .module-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex:0 0 54px;box-shadow:0 5px 12px rgba(0,0,0,.10)}
-.module-card .pill{background:#eef3f9!important;color:#18324d!important;border:0!important;border-radius:999px!important;font-size:11px!important;font-weight:900!important;padding:7px 11px!important}
-.module-card h3{margin:0!important;color:#172b43!important;font-size:20px!important;line-height:1.18!important}
-.module-card p{margin:0!important;color:#607086!important;font-size:14px!important;line-height:1.45!important;flex:1}
-.module-card .link{display:flex;align-items:center;justify-content:center;margin-top:18px;padding:12px 14px;border-radius:10px;background:#ff243b;color:#fff!important;font-weight:900;text-decoration:none;min-height:44px}
-.module-card .link:hover{background:#e91d33}
-.module-card .module-accent{position:absolute;left:0;top:0;bottom:0;width:4px;background:#ff243b}
-@media(max-width:900px){.modules{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:620px){.modules{grid-template-columns:1fr}.module-card{min-height:245px;padding:18px!important}.module-card h3{font-size:18px!important}}
+.v7-card{transition:transform .18s,box-shadow .18s,border-color .18s}
+.v7-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(18,35,63,.11)!important;border-color:#bfd0e4!important}
+.v7-card h4,.v5-card h3,.card h3{color:var(--navy)!important}
+.v7-card p,.v5-card p,.card p{color:var(--muted)!important}
+.btn{background:var(--red)!important;color:#fff!important;border:1px solid var(--red)!important;border-radius:11px!important;box-shadow:0 6px 14px rgba(239,51,64,.18)}
+.btn:hover{background:#d92735!important;border-color:#d92735!important;transform:translateY(-1px)}
+.btn.secondary{background:#fff!important;color:var(--navy)!important;border:1px solid var(--line)!important;box-shadow:none}
+.section-title{color:var(--navy)!important}
+.sub,.small{color:var(--muted)!important}
+.progress,.v5-progress{background:#e6edf5!important}.bar,.v5-progress-bar{background:linear-gradient(90deg,var(--red),var(--red2))!important}
+#programme .module-card{background:#fff!important;border:1px solid var(--line)!important;box-shadow:0 8px 22px rgba(18,35,63,.06)!important}
+#programme .module-card:nth-child(3n+1) .pill{background:#fff1f2;color:#d92836}
+#programme .module-card:nth-child(3n+2) .pill{background:#eff6ff;color:#2563eb}
+#programme .module-card:nth-child(3n) .pill{background:#ecfdf5;color:#059669}
+.modal-box{background:#fff!important;color:var(--ink)!important;box-shadow:0 25px 70px rgba(18,35,63,.22)}
+.lesson{background:#f6f9fc!important;border-left-color:var(--red)!important}
+footer{background:var(--navy)!important}
+/* Category accents */
+.v7-section:nth-of-type(1) .v7-chip{color:var(--blue)!important;background:#eff6ff!important}
+.v7-section:nth-of-type(2) .v7-chip{color:var(--orange)!important;background:#fffbeb!important}
+.v7-section:nth-of-type(3) .v7-chip{color:var(--violet)!important;background:#f5f3ff!important}
+.v7-section:nth-of-type(4) .v7-chip{color:var(--green)!important;background:#ecfdf5!important}
+.v7-section:nth-of-type(5) .v7-chip{color:var(--red)!important;background:#fff1f2!important}
+@media(max-width:950px){.v7-shell{grid-template-columns:1fr!important}.v7-side{position:static!important}.v7-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){main{padding:18px 12px 60px!important}.v7-cards{grid-template-columns:1fr!important}.v7-welcome{min-height:0;padding:22px!important}.v7-kpis{grid-template-columns:repeat(2,1fr)!important}}
 
 </style>
 </head>
 <body>
-<div id="dzToast" class="dz-notif"></div><div class="dz-sticky-actions"><button class="btn" onclick="dzOpenWhatsApp()">💬 WhatsApp</button></div>
+<div id="dzToast" class="dz-notif"></div>
 <header><div class="nav"><div><div class="brand">DIGITAL <span>DZ</span></div><div class="tag">Apprendre • Créer • Vendre • Progresser</div></div><nav><button onclick="scrollToId('programme')">Programme</button><button onclick="scrollToId('tests')">Tests</button><button onclick="scrollToId('espace-fonctions')">Mon espace</button></nav></div></header>
 <main>
 <div class="v7-shell" id="dashboard">
+<div class="dz-panel" style="background:rgba(255,255,255,.96);border:1px solid var(--line);box-shadow:0 8px 24px rgba(18,35,63,.06);margin-bottom:18px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;">
+  <div><b style="color:var(--navy);font-size:18px;">Votre parcours en 5 étapes</b><div class="small">Apprendre → Pratiquer → Tester → Valider → Commander</div></div>
+  <div class="dz-actions"><button class="btn" onclick="scrollToId('programme')">📚 Parcours</button><button class="btn secondary" onclick="dzOpenSearch()">🔎 Rechercher</button><button class="btn secondary" onclick="dzOpenWhatsApp()">💬 WhatsApp</button></div>
+</div>
   <aside class="v7-side">
     <h3>🎓 DIGITAL DZ</h3>
     <div class="v7-group-title">Accueil</div>
@@ -205,7 +210,7 @@ footer{background:#071225}
   <div class="v7-main">
     <div class="v7-welcome">
       <div class="v7-welcome-row">
-        <div><span class="v7-chip">ESPACE APPRENANT • SANS COMPTE</span><h2 style="margin:9px 0 4px;color:#fff">Bienvenue dans votre parcours DIGITAL DZ 👋</h2><p style="margin:0;color:#aab5ca">Tout est organisé par parcours : apprendre → pratiquer → tester → mesurer → progresser.</p></div>
+        <div><span class="v7-chip">ESPACE APPRENANT</span><h2 style="margin:9px 0 4px;color:#fff">Bienvenue dans votre parcours DIGITAL DZ 👋</h2><p style="margin:0;color:#aab5ca">Tout est organisé par parcours : apprendre → pratiquer → tester → mesurer → progresser.</p></div>
         <button class="btn" onclick="scrollToId('programme')">▶ Continuer la formation</button>
       </div>
       <div class="v7-kpis">
@@ -256,38 +261,12 @@ footer{background:#071225}
       <div class="v7-section-head"><div><h3>🛒 5. Acheter / commander</h3><p>Commande de la formation avec paiement à la livraison.</p></div></div>
       <div class="v7-cards">
         <div class="v7-card"><span class="v7-chip">COD</span><h4>Paiement à la livraison</h4><p>Demandez votre formation et recevez votre carte d'accès.</p><button class="btn" onclick="dzOpenOrder('cod')">Commander</button></div>
-        <div class="v7-card"><span class="v7-chip">ACCÈS</span><h4>Code de carte PVC</h4><p>Entrez le code de votre carte PVC. Aucun compte email n’est nécessaire.</p><button class="btn" onclick="dzOpenAccess()">Entrer mon code</button></div>
+        <div class="v7-card"><span class="v7-chip">ACCÈS</span><h4>Code de carte PVC</h4><p>Entrez le code reçu avec votre carte pour accéder au parcours.</p><button class="btn" onclick="dzOpenAccess()">Entrer mon code</button></div>
         <div class="v7-card"><span class="v7-chip">MOBILE</span><h4>Sur smartphone</h4><p>Le parcours reste utilisable sur téléphone.</p><button class="btn" onclick="dzMobileMode()">Mode mobile</button></div>
       </div>
     </div>
   </div>
 </div>
-<section class="hero">
-<div class="pill">FORMATION DIGITALE COMPLÈTE</div>
-<h1>Apprenez à créer des revenus en ligne, étape par étape.</h1>
-<p>28 cours pratiques, 160 questions interactives et des ressources pour passer de l'apprentissage à l'action depuis smartphone ou PC.</p>
-<div class="actions">
-<button class="btn" onclick="scrollToId('programme')">Commencer la formation</button>
-<a class="btn" href="ressources.html">🌐 Boîte à outils</a>
-<button class="btn secondary" onclick="scrollToId('espace-apprenant')">🎓 Espace apprenant</button>
-</div>
-</section>
-
-<h2 class="section-title">Ce que vous allez recevoir</h2>
-<p class="sub">Cliquez sur une carte pour ouvrir directement son contenu.</p>
-<div class="grid">
-<div class="card feature" onclick="openModules()"><div class="num">28</div><h3>Modules</h3><p>Les cours complets, objectifs, exercices et actions.</p><div class="link">Voir les 28 cours →</div></div>
-<div class="card feature" onclick="startQuiz(0)"><div class="num">160</div><h3>Tests interactifs</h3><p>Questions, correction, explications et score.</p><div class="link">Commencer les tests →</div></div>
-<div class="card feature" onclick="openResource('prompts')"><div class="num">30+</div><h3>Prompts ChatGPT</h3><p>Des modèles de prompts pratiques.</p><div class="link">Découvrir →</div></div>
-<div class="card feature" onclick="openResource('products')"><div class="num">50</div><h3>Idées de produits digitaux</h3><p>Des pistes concrètes à tester.</p><div class="link">Voir les idées →</div></div>
-<div class="card feature" onclick="openResource('freelance')"><div class="num">50</div><h3>Services freelance</h3><p>Des services à proposer en ligne.</p><div class="link">Voir les services →</div></div>
-<div class="card feature" onclick="openResource('models')"><div class="num">20</div><h3>Modèles Excel & Canva</h3><p>Structures à reproduire et personnaliser.</p><div class="link">Découvrir →</div></div>
-<div class="card feature" onclick="openResource('roadmap')"><div class="num">30/60/90</div><h3>Plan d'action</h3><p>Une feuille de route progressive.</p><div class="link">Voir la feuille de route →</div></div>
-<div class="card feature" onclick="openResource('project')"><div class="num">✓</div><h3>Projet final</h3><p>Un projet pratique et une attestation de progression interne.</p><div class="link">Voir le projet →</div></div>
-<div class="card feature" onclick="scrollToId('espace-apprenant')"><div class="num">V5</div><h3>🎓 Espace apprenant</h3><p>Missions, progression, téléchargements et attestation interne.</p><div class="link">Ouvrir →</div></div>
-</div>
-
-
 <section id="espace-apprenant">
 <h2 class="section-title">🎓 Espace apprenant V7</h2>
 <p class="sub">Passez de la lecture à l'action : missions, progression, ressources téléchargeables et attestation interne.</p>
@@ -352,7 +331,7 @@ footer{background:#071225}
   <h2 class="section-title">🚀 Votre espace DIGITAL DZ</h2>
   <p class="sub">Toutes les nouvelles fonctions sont réunies ici : accès, progression, recherche, favoris, ressources, vidéos, IA, commande et support.</p>
   <div class="dz-grid">
-    <div class="dz-card"><span class="dz-badge">🔐 1 — Accès</span><h3>Accès par carte PVC (sans compte)</h3><p>Entrez le code reçu avec votre carte PVC.</p><button class="btn" onclick="dzOpenAccess()">🔑 Entrer mon code</button></div>
+    <div class="dz-card"><span class="dz-badge">🔐 1 — Accès</span><h3>Connexion avec code</h3><p>Entrez le code reçu avec votre carte PVC.</p><button class="btn" onclick="dzOpenAccess()">🔑 Entrer mon code</button></div>
     <div class="dz-card"><span class="dz-badge">📊 2 — Progression</span><h3>Mon tableau de bord</h3><p>Suivez modules, missions et tests.</p><button class="btn" onclick="dzOpenDashboard()">📊 Ouvrir mon espace</button></div>
     <div class="dz-card"><span class="dz-badge">🏆 3 — Récompenses</span><h3>Badges</h3><p>Débloquez des badges selon votre parcours.</p><button class="btn" onclick="dzOpenBadges()">🏆 Voir mes badges</button></div>
     <div class="dz-card"><span class="dz-badge">🎓 4 — Attestation</span><h3>Mon attestation</h3><p>Générez votre attestation interne de progression.</p><button class="btn" onclick="openV5Certificate()">🎓 Générer</button></div>
@@ -367,27 +346,6 @@ footer{background:#071225}
     <div class="dz-card"><span class="dz-badge">📦 13 — Paiement</span><h3>Paiement à la livraison</h3><p>Formulaire de commande prévu pour la livraison en Algérie.</p><button class="btn" onclick="dzOpenOrder('cod')">📦 Commander en COD</button></div>
     <div class="dz-card"><span class="dz-badge">📱 14 — Mobile</span><h3>Mode mobile</h3><p>Interface responsive et raccourcis adaptés au téléphone.</p><button class="btn" onclick="dzMobileMode()">📱 Activer le mode mobile</button></div>
     <div class="dz-card"><span class="dz-badge">🔔 15 — Notifications</span><h3>Rappels</h3><p>Activez des rappels locaux pour continuer votre parcours.</p><button class="btn" onclick="dzEnableReminder()">🔔 Activer</button></div>
-    <div class="dz-card"><span class="dz-badge">📝 16 — Notes</span><h3>Mes notes</h3><p>Gardez vos idées et actions directement dans votre parcours.</p><button class="btn" onclick="dzOpenNotes()">📝 Ouvrir</button></div>
-    <div class="dz-card"><span class="dz-badge">⏱️ 17 — Concentration</span><h3>Minuteur 25 min</h3><p>Travaillez sur une mission avec un minuteur simple.</p><button class="btn" onclick="dzOpenTimer()">⏱️ Démarrer</button></div>
-    <div class="dz-card"><span class="dz-badge">📅 18 — Plan du jour</span><h3>Ma mission du jour</h3><p>Une action simple pour garder votre rythme.</p><button class="btn" onclick="dzOpenDailyPlan()">📅 Voir</button></div>
-    <div class="dz-card"><span class="dz-badge">💾 19 — Sauvegarde</span><h3>Sauvegarder mon parcours</h3><p>Exportez vos favoris, scores, missions et préférences.</p><button class="btn" onclick="dzExportBackup()">💾 Sauvegarder</button></div>
-    <div class="dz-card"><span class="dz-badge">📥 20 — Restaurer</span><h3>Restaurer mon parcours</h3><p>Réimportez une sauvegarde sur un autre appareil.</p><button class="btn" onclick="dzImportBackup()">📥 Restaurer</button></div>
-    <div class="dz-card"><span class="dz-badge">🎯 21 — Focus</span><h3>Mode concentration</h3><p>Réduisez les distractions pendant votre session.</p><button class="btn" onclick="dzToggleFocus()">🎯 Activer</button></div>
-    <div class="dz-card"><span class="dz-badge">📤 22 — Partage</span><h3>Partager DIGITAL DZ</h3><p>Partagez facilement le lien de la formation.</p><button class="btn" onclick="dzShareSite()">📤 Partager</button></div>
-    <div class="dz-card"><span class="dz-badge">🧹 23 — Réinitialisation</span><h3>Réinitialiser l'appareil</h3><p>Effacez uniquement les données locales de ce navigateur.</p><button class="btn" onclick="dzResetLocal()">🧹 Réinitialiser</button></div>
-  </div>
-</section>
-
-<section class="dz-panel" id="dz-quick-tools">
-  <h2 class="section-title">🧰 Outils pratiques</h2>
-  <p class="sub">Quelques fonctions supplémentaires pour travailler plus facilement depuis smartphone ou PC.</p>
-  <div class="dz-tools-grid">
-    <div class="dz-tool-card"><div class="v5-icon">📝</div><h4>Mes notes</h4><p>Gardez vos idées et actions.</p><button class="btn" onclick="dzOpenNotes()">Ouvrir</button></div>
-    <div class="dz-tool-card"><div class="v5-icon">⏱️</div><h4>Minuteur</h4><p>25 minutes de concentration.</p><button class="btn" onclick="dzOpenTimer()">Démarrer</button></div>
-    <div class="dz-tool-card"><div class="v5-icon">📅</div><h4>Mission du jour</h4><p>Une action concrète par jour.</p><button class="btn" onclick="dzOpenDailyPlan()">Voir</button></div>
-    <div class="dz-tool-card"><div class="v5-icon">💾</div><h4>Sauvegarde</h4><p>Exporter ou restaurer le parcours.</p><button class="btn" onclick="dzExportBackup()">Exporter</button></div>
-    <div class="dz-tool-card"><div class="v5-icon">🎯</div><h4>Mode concentration</h4><p>Masquer les distractions.</p><button class="btn" onclick="dzToggleFocus()">Activer</button></div>
-    <div class="dz-tool-card"><div class="v5-icon">📤</div><h4>Partager</h4><p>Partager le lien de DIGITAL DZ.</p><button class="btn" onclick="dzShareSite()">Partager</button></div>
   </div>
 </section>
 
@@ -441,7 +399,7 @@ footer{background:#071225}
 </div>
 
 <footer>
-<b>DIGITAL DZ</b><br><span class="small">Accès sans compte • Progression locale sur votre appareil • Formation pratique. Aucun revenu n'est garanti. Vérifiez toujours les règles des plateformes et les obligations applicables avant de vendre.</span>
+<b>DIGITAL DZ</b><br><span class="small">Formation pratique. Aucun revenu n'est garanti. Vérifiez toujours les règles des plateformes et les obligations applicables avant de vendre.</span>
 </footer>
 
 <script>
@@ -455,7 +413,7 @@ function openModal(html){document.getElementById('modalContent').innerHTML=html;
 function closeModal(){document.getElementById('modal').classList.remove('show');document.body.style.overflow='';}
 function backdropClose(e){if(e.target.id==='modal')closeModal();}
 function openModules(){
-  openModal('<h2>Les 28 cours DIGITAL DZ</h2><p class="small">Cliquez sur un cours pour l’ouvrir.</p><div class="modules">'+modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="module-accent" style="background:${moduleColors[m.id-1]}"></span><div class="module-top"><div class="module-icon" style="background:${moduleColors[m.id-1]}">${moduleIcons[m.id-1]}</div><span class="pill">Module ${m.id}</span></div><h3>${m.title}</h3><p>${m.goal}</p><div class="link">Ouvrir le cours →</div></div>`).join('')+'</div>');
+  openModal('<h2>Les 28 cours DIGITAL DZ</h2><p class="small">Cliquez sur un cours pour l’ouvrir.</p><div class="modules">'+modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="pill">Module ${m.id}</span><h3>${m.title}</h3><p>${m.goal}</p></div>`).join('')+'</div>');
 }
 function openModule(id){
  const m=modules.find(x=>x.id===id);
@@ -587,9 +545,7 @@ function showResult(){
  document.getElementById('quizArea').innerHTML=`<div class="card"><h2>${qScore} / ${quizPool.length}</h2><p style="font-size:22px;font-weight:900">${pct}%</p><p>${pct>=70?'Bravo : tu as atteint le seuil indicatif de 70 %.':'Continue à revoir les cours puis retente le test.'}</p><button class="btn" onclick="startQuiz(0)">Recommencer les 160 tests</button></div>`;clearQuizState();
 }
 const grid=document.getElementById('moduleGrid');
-const moduleIcons=['📈','🎯','🧠','🤖','🎨','💡','🏷️','🛍️','👤','💳','💼','🧰','📁','👥','📸','🎬','💬','🌐','🚀','🔎','📣','📝','✉️','💰','🛡️','📊','⚙️','🏆'];
-const moduleColors=['#ef233c','#2477e8','#22b573','#8b3dff','#ff7a00','#12a8b4','#f0a900','#8e44ad','#d62f83','#ef233c','#2477e8','#22b573','#8b3dff','#ff7a00','#12a8b4','#f0a900','#8e44ad','#d62f83','#ef233c','#2477e8','#22b573','#8b3dff','#ff7a00','#12a8b4','#f0a900','#8e44ad','#d62f83','#ef233c'];
-grid.innerHTML=modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="module-accent" style="background:${moduleColors[m.id-1]}"></span><div class="module-top"><div class="module-icon" style="background:${moduleColors[m.id-1]}">${moduleIcons[m.id-1]}</div><span class="pill">Module ${m.id}</span></div><h3>${m.title}</h3><p>${m.goal}</p><div class="link">Ouvrir le cours →</div></div>`).join('');
+grid.innerHTML=modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="pill">Module ${m.id}</span><h3>${m.title}</h3><p>${m.goal}</p><div class="link">Ouvrir le cours →</div></div>`).join('');
 
 window.addEventListener('load',()=>{try{const st=JSON.parse(localStorage.getItem(QUIZ_STATE_KEY)||'null');if(st&&st.mode==='all'&&st.qi>=0&&st.qi<questions.length){const b=document.getElementById('resumeBox');if(b)b.style.display='block';setTimeout(()=>resumeQuiz(),150);}}catch(e){}});
 
@@ -600,8 +556,8 @@ let dzState=JSON.parse(localStorage.getItem(DZ_KEY)||'{}');
 dzState.access=dzState.access||false; dzState.code=dzState.code||''; dzState.favorites=dzState.favorites||[]; dzState.history=dzState.history||[]; dzState.notifications=dzState.notifications||false;
 function dzSave(){localStorage.setItem(DZ_KEY,JSON.stringify(dzState));}
 function dzToast(msg){let e=document.getElementById('dzToast');if(!e){e=document.createElement('div');e.id='dzToast';e.className='dz-notif';document.body.appendChild(e)}e.innerHTML=msg;e.style.display='block';clearTimeout(window.__dzT);window.__dzT=setTimeout(()=>e.style.display='none',4000);}
-function dzOpenAccess(){openModal(`<h2>🔐 Accès à votre formation</h2><p>Entrez le code figurant sur votre carte PVC DIGITAL DZ.</p><div class="dz-access-note">🔓 Accès sans compte : aucune adresse email ni mot de passe ne sont demandés. La progression est enregistrée sur cet appareil.</div><input id="dzAccessCode" class="dz-input" placeholder="Votre code d'accès" maxlength="32"><div class="dz-access-note">ℹ️ Cette version sans compte mémorise le code et la progression sur l’appareil. Une validation serveur des codes PVC pourra être ajoutée plus tard si nécessaire.</div><button class="btn" onclick="dzLogin()">🔓 Ouvrir mon accès</button>`);}
-function dzLogin(){const c=(document.getElementById('dzAccessCode')?.value||'').trim();if(c.length<4){alert('Entrez un code valide.');return;}dzState.access=true;dzState.code=c.toUpperCase();dzSave();closeModal();dzToast('✅ Carte PVC activée sur cet appareil.');dzOpenDashboard();}
+function dzOpenAccess(){openModal(`<h2>🔐 Accès à votre formation</h2><p>Entrez le code figurant sur votre carte PVC DIGITAL DZ.</p><input id="dzAccessCode" class="dz-input" placeholder="Votre code d'accès" maxlength="32"><div class="dz-notice">Prototype actuel : la validation est locale. Pour une vraie protection commerciale, nous connecterons cette fonction à Supabase avant la mise en vente.</div><button class="btn" onclick="dzLogin()">🔓 Ouvrir mon accès</button>`);}
+function dzLogin(){const c=(document.getElementById('dzAccessCode')?.value||'').trim();if(c.length<4){alert('Entrez un code valide.');return;}dzState.access=true;dzState.code=c;dzSave();closeModal();dzToast('✅ Accès enregistré sur cet appareil.');dzOpenDashboard();}
 function dzOpenDashboard(){
  const missionDone=(typeof v5Done!=='undefined'?v5Done.length:0); const missionPct=Math.round(missionDone/28*100); const history=dzState.history.length; const fav=dzState.favorites.length;
  openModal(`<h2>📊 Mon tableau de bord</h2><div class="dz-grid"><div class="dz-card"><h3>${missionPct}%</h3><p>Progression des missions</p><div class="dz-progress"><span style="width:${missionPct}%"></span></div></div><div class="dz-card"><h3>${history}</h3><p>Tests enregistrés</p></div><div class="dz-card"><h3>${fav}</h3><p>Favoris</p></div></div><div class="dz-actions" style="margin-top:14px"><button class="btn" onclick="scrollToId('programme');closeModal()">📚 Continuer les modules</button><button class="btn" onclick="startQuiz(0);closeModal()">📝 Faire un test</button></div>`);
@@ -616,43 +572,12 @@ function dzOpenDownloads(){openModal(`<h2>📥 Téléchargements</h2><div class=
 function dzOpenVideos(){const links=[['Module 1 — revenus en ligne','https://www.youtube.com/results?search_query=revenus+en+ligne+freelance+francais'],['Canva — débuter','https://www.youtube.com/results?search_query=Canva+tutoriel+francais+debutant'],['ChatGPT — prompts','https://www.youtube.com/results?search_query=ChatGPT+prompts+francais'],['E-commerce — débuter','https://www.youtube.com/results?search_query=ecommerce+algerie+debutant']];openModal('<h2>🎥 Vidéos & tutoriels</h2><div class="dz-grid">'+links.map(x=>`<div class="dz-card"><h3>${x[0]}</h3><a class="btn" target="_blank" rel="noopener" href="${x[1]}">▶ Voir sur YouTube</a></div>`).join('')+'</div><p class="small">Les résultats YouTube peuvent changer. Vérifiez la qualité et l’actualité des tutoriels.</p>');}
 function dzOpenAI(){openModal(`<h2>🤖 Assistant IA</h2><p>Décrivez ce que vous voulez faire et DIGITAL DZ prépare un prompt à copier dans votre assistant IA.</p><textarea id="dzAIInput" class="dz-input" rows="4" placeholder="Ex. Je veux créer un produit digital pour les étudiants algériens..."></textarea><button class="btn" style="margin-top:10px" onclick="dzGeneratePrompt()">✨ Générer le prompt</button><div id="dzAIResult"></div>`);}
 function dzGeneratePrompt(){const q=(document.getElementById('dzAIInput')?.value||'').trim();if(!q){alert('Décrivez votre besoin.');return;}const prompt=`Tu es mon assistant DIGITAL DZ. Je suis en Algérie et je veux ${q}. Donne-moi un plan pratique étape par étape, les outils gratuits à utiliser, les risques à éviter, un exemple concret et les prochaines actions à réaliser aujourd'hui. Ne promets aucun revenu garanti.`;document.getElementById('dzAIResult').innerHTML=`<div class="dz-notice"><b>Prompt prêt à copier :</b><br><textarea class="dz-input" rows="8" readonly>${prompt.replace(/</g,'&lt;')}</textarea><button class="btn" style="margin-top:8px" onclick="navigator.clipboard?.writeText(${JSON.stringify(prompt)});dzToast('📋 Prompt copié')">📋 Copier</button></div>`;}
-function dzOpenWhatsApp(){const number='213561716497';window.open('https://wa.me/'+number+'?text='+encodeURIComponent('Bonjour DIGITAL DZ, je souhaite avoir des informations sur la formation.'),'_blank');}
+function dzOpenWhatsApp(){const number='';if(!number){openModal('<h2>💬 Support WhatsApp</h2><p>Ajoutez votre numéro WhatsApp professionnel dans le code du site pour activer ce bouton.</p><div class="dz-notice">Exemple de format : 213XXXXXXXXX</div>');return;}window.open('https://wa.me/'+number+'?text='+encodeURIComponent('Bonjour DIGITAL DZ, je souhaite avoir des informations sur la formation.'),'_blank');}
 function dzOpenOrder(mode){const s=document.getElementById('dz-order');s.style.display='block';scrollToId('dz-order');if(mode==='cod')document.getElementById('dzPay').value='Paiement à la livraison';}
 function dzCloseOrder(){document.getElementById('dz-order').style.display='none';}
-function dzSubmitOrder(e){e.preventDefault();const data={name:document.getElementById('dzName').value,phone:document.getElementById('dzPhone').value,wilaya:document.getElementById('dzWilaya').value,commune:document.getElementById('dzCommune').value,address:document.getElementById('dzAddress').value,payment:document.getElementById('dzPay').value,product:document.getElementById('dzProduct').value,date:new Date().toISOString()};localStorage.setItem('digital_dz_last_order',JSON.stringify(data));const msg='Bonjour DIGITAL DZ, je souhaite commander la formation.\n\nNom: '+data.name+'\nTéléphone: '+data.phone+'\nWilaya: '+data.wilaya+'\nCommune: '+data.commune+'\nAdresse: '+data.address+'\nPaiement: Paiement à la livraison';document.getElementById('dzOrderResult').innerHTML='<div class=\"dz-notice\">✅ Commande préparée. Cliquez sur WhatsApp pour envoyer les informations.</div><a class=\"btn\" target=\"_blank\" rel=\"noopener\" href=\"https://wa.me/213561716497?text='+encodeURIComponent(msg)+'\">💬 Envoyer la commande sur WhatsApp</a>';}
+function dzSubmitOrder(e){e.preventDefault();const data={name:document.getElementById('dzName').value,phone:document.getElementById('dzPhone').value,wilaya:document.getElementById('dzWilaya').value,commune:document.getElementById('dzCommune').value,address:document.getElementById('dzAddress').value,payment:document.getElementById('dzPay').value,product:document.getElementById('dzProduct').value,date:new Date().toISOString()};localStorage.setItem('digital_dz_last_order',JSON.stringify(data));document.getElementById('dzOrderResult').innerHTML='<div class="dz-notice">✅ Demande enregistrée sur cet appareil. Pour recevoir réellement les commandes, connectez ensuite ce formulaire à Supabase, WhatsApp ou votre système de commande.</div>';}
 function dzMobileMode(){document.documentElement.style.scrollBehavior='smooth';document.body.classList.toggle('dz-mobile-on');dzToast('📱 Interface optimisée pour mobile.');}
 function dzEnableReminder(){if(!('Notification' in window)){dzToast('🔔 Les notifications ne sont pas prises en charge par ce navigateur.');return;}Notification.requestPermission().then(p=>{if(p==='granted'){dzState.notifications=true;dzSave();new Notification('DIGITAL DZ',{body:'Votre parcours vous attend. Continuez votre prochaine mission !'});dzToast('🔔 Rappel activé sur cet appareil.');}else dzToast('🔔 Permission non accordée.');});}
-function dzOpenNotes(){
- const notes=localStorage.getItem('digital_dz_notes')||'';
- openModal(`<h2>📝 Mes notes personnelles</h2><p>Vos notes restent sur cet appareil.</p><textarea id="dzNotesArea" class="dz-input dz-note-area" placeholder="Idées, objectifs, prospects, actions à faire…">${escapeHtmlV5(notes)}</textarea><div class="dz-actions" style="margin-top:10px"><button class="btn" onclick="dzSaveNotes()">💾 Enregistrer</button><button class="btn" onclick="dzClearNotes()">🧹 Effacer</button></div>`);
-}
-function dzSaveNotes(){const v=document.getElementById('dzNotesArea')?.value||'';localStorage.setItem('digital_dz_notes',v);dzToast('📝 Notes enregistrées');}
-function dzClearNotes(){if(confirm('Effacer toutes vos notes locales ?')){localStorage.removeItem('digital_dz_notes');document.getElementById('dzNotesArea').value='';dzToast('🧹 Notes effacées');}}
-let dzTimerInterval=null,dzTimerSeconds=25*60;
-function dzOpenTimer(){
- if(dzTimerInterval) clearInterval(dzTimerInterval); dzTimerSeconds=25*60;
- openModal(`<h2>⏱️ Session de concentration</h2><p>25 minutes de travail, puis une pause.</p><div id="dzTimerDisplay" class="dz-timer">25:00</div><div class="dz-actions" style="justify-content:center"><button class="btn" onclick="dzStartTimer()">▶ Démarrer</button><button class="btn" onclick="dzPauseTimer()">⏸ Pause</button><button class="btn" onclick="dzResetTimer()">↺ Réinitialiser</button></div>`);
-}
-function dzRenderTimer(){const e=document.getElementById('dzTimerDisplay');if(!e)return;const m=Math.floor(dzTimerSeconds/60),s=dzTimerSeconds%60;e.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');}
-function dzStartTimer(){if(dzTimerInterval)return;dzTimerInterval=setInterval(()=>{dzTimerSeconds--;dzRenderTimer();if(dzTimerSeconds<=0){clearInterval(dzTimerInterval);dzTimerInterval=null;dzToast('🎉 Session terminée ! Faites une pause de 5 minutes.');if('Notification' in window && Notification.permission==='granted')new Notification('DIGITAL DZ',{body:'Session de 25 minutes terminée.'});}},1000);dzToast('⏱️ Session démarrée');}
-function dzPauseTimer(){if(dzTimerInterval){clearInterval(dzTimerInterval);dzTimerInterval=null;dzToast('⏸ Minuteur en pause');}}
-function dzResetTimer(){dzPauseTimer();dzTimerSeconds=25*60;dzRenderTimer();}
-function dzOpenDailyPlan(){
- const today=new Date().toISOString().slice(0,10);let d={};try{d=JSON.parse(localStorage.getItem('digital_dz_daily')||'{}')}catch(e){}
- if(d.date!==today){const tasks=['Lire un module et prendre 3 notes','Faire un test de module','Créer un petit exemple de portfolio','Préparer une offre simple','Créer un visuel Canva','Écrire 5 idées de contenus','Contacter 3 prospects de manière respectueuse','Améliorer une ancienne offre','Organiser ses fichiers et modèles','Mesurer un indicateur de son activité'];d={date:today,task:tasks[new Date().getDate()%tasks.length],done:false};localStorage.setItem('digital_dz_daily',JSON.stringify(d));}
- openModal(`<h2>📅 Ma mission du jour</h2><div class="dz-card"><span class="dz-badge">${d.date}</span><h3>${d.task}</h3><p>Une petite action réalisée vaut mieux qu'une longue liste non commencée.</p><button class="btn" onclick="dzCompleteDaily()">${d.done?'✅ Déjà terminée':'☑️ Marquer comme terminée'}</button></div>`);
-}
-function dzCompleteDaily(){let d={};try{d=JSON.parse(localStorage.getItem('digital_dz_daily')||'{}')}catch(e){}d.done=true;localStorage.setItem('digital_dz_daily',JSON.stringify(d));dzToast('🎯 Mission du jour terminée');dzOpenDailyPlan();}
-function dzExportBackup(){
- const keys=['digitalDzV5','digital_dz_state','digital_dz_notes','digital_dz_daily','digital_dz_last_order','digital_dz_quiz_state'];const data={version:1,createdAt:new Date().toISOString(),storage:{}};keys.forEach(k=>{const v=localStorage.getItem(k);if(v!==null)data.storage[k]=v;});
- const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='digital-dz-sauvegarde.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);dzToast('💾 Sauvegarde téléchargée');
-}
-function dzImportBackup(){
- const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.onchange=()=>{const f=input.files?.[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const data=JSON.parse(r.result);if(!data.storage)throw new Error('Format invalide');Object.entries(data.storage).forEach(([k,v])=>localStorage.setItem(k,String(v)));dzToast('📥 Sauvegarde restaurée');setTimeout(()=>location.reload(),700);}catch(e){alert('Fichier de sauvegarde invalide.');}};r.readAsText(f);};input.click();
-}
-function dzToggleFocus(){document.documentElement.classList.toggle('dz-focus');dzToast(document.documentElement.classList.contains('dz-focus')?'🎯 Mode concentration activé':'🎯 Mode concentration désactivé');}
-async function dzShareSite(){const data={title:'DIGITAL DZ',text:'Formation digitale pratique : 28 modules, 160 tests et missions.',url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard?.writeText(location.href);dzToast('📋 Lien copié');}}catch(e){}}
-function dzResetLocal(){if(!confirm('Attention : cela efface les données locales de ce navigateur (progression, favoris, scores, notes et préférences). Continuer ?'))return;['digitalDzV5','digital_dz_state','digital_dz_notes','digital_dz_daily','digital_dz_last_order','digital_dz_quiz_state'].forEach(k=>localStorage.removeItem(k));dzToast('🧹 Données locales effacées');setTimeout(()=>location.reload(),700);}
 function dzTrackQuiz(label,score){dzState.history.push({label:label||'Test',score:Number(score)||0,date:new Date().toISOString()});dzState.history=dzState.history.slice(-30);dzSave();}
 /* Ajoute un bouton favori dans chaque fiche de module sans casser l'existant. */
 const dzOriginalOpenModule=window.openModule;

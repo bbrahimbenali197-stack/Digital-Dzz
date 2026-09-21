@@ -1,42 +1,25 @@
-DIGITAL DZ — VERSION FINALE SANS COMPTE
+DIGITAL DZ — REDESIGN FINAL
 
-Cette version est organisée autour du parcours :
-Accueil → Apprendre → Pratiquer → Tester → Mesurer → Progresser → Commander.
+Version : plateforme de formation organisée
 
-IMPORTANT
-- Aucun compte email, mot de passe ou Firebase n'est utilisé dans cette version.
-- La progression, favoris et historique des tests sont enregistrés localement dans le navigateur (localStorage).
-- Le code de carte PVC est mémorisé localement sur l'appareil. Cette version ne fait pas de validation serveur du code.
-- Le bouton WhatsApp utilise le numéro professionnel DIGITAL DZ : +213 561 716 497.
-- Les commandes COD sont préparées puis envoyées sur WhatsApp.
+Organisation :
+1. Accueil / tableau de bord
+2. Apprendre — 28 modules
+3. Pratiquer — 28 missions + challenge 30 jours
+4. Tester & mesurer — 160 tests + historique
+5. Valider — badges + attestation interne
+6. Commander / support — COD + carte PVC + WhatsApp
+7. Ressources — outils, téléchargements, vidéos, IA
 
-Fonctions incluses
-1. Accès par carte PVC sans compte
-2. Tableau de bord et progression
-3. Badges / récompenses
-4. Attestation interne
-5. 160 tests + historique des scores
-6. Recherche
-7. Favoris
-8. Téléchargements
-9. Vidéos / tutoriels YouTube
-10. Assistant IA pour générer des prompts
-11. Support WhatsApp
-12. Commande
-13. Paiement à la livraison (COD) + envoi WhatsApp
-14. Interface mobile responsive
-15. Notifications locales du navigateur
+Design :
+- fond clair bleu très léger
+- hero avec visuel technologique DIGITAL DZ
+- palette rouge + bleu + vert + orange + violet
+- cartes blanches lisibles
+- boutons uniformes
+- responsive mobile/tablette/PC
 
-Contenu
-- 28 modules
-- 160 questions interactives
-- Challenge 30 jours
-- Ressources
-- Modèles
-- Ancien fond technologique DIGITAL DZ
-
-Installation GitHub Pages
-- Remplacer uniquement index.html par celui de ce pack.
-- Conserver dans le même dépôt : digital-dz-tech-background.png, ressources.html et DIGITAL_DZ_MODELES.zip.
-- Faire Commit changes.
-- Attendre la publication GitHub Pages puis recharger avec Ctrl+F5.
+Important :
+- Aucun compte email/Firebase n'est requis dans cette version.
+- Le code PVC est une fonction d'accès côté interface ; une validation serveur est nécessaire pour une sécurité réelle.
+- Le site reste compatible avec GitHub Pages.
