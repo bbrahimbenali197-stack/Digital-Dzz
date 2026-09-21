@@ -18,7 +18,7 @@ main{max-width:1200px;margin:auto;padding:35px 18px 80px}.hero{background:#11182
 .feature{cursor:pointer;transition:.18s}.feature:hover{transform:translateY(-2px);box-shadow:0 10px 25px #00000012}.num{font-size:30px;color:var(--red);font-weight:900}.link{color:#b51f2a;font-weight:800;margin-top:18px}
 .modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.module-card{cursor:pointer}.module-card h3{margin:6px 0}.module-card p{color:var(--muted);font-size:14px}
 .modal{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:18px;z-index:30}.modal.show{display:flex}.modal-box{background:#fff;max-width:900px;width:100%;max-height:90vh;overflow:auto;border-radius:20px;padding:26px;position:relative}.close{position:absolute;right:16px;top:12px;background:#f0f1f3;border:0;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:20px}.pill{display:inline-block;background:#fff0f1;color:#a91925;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;margin:3px}.lesson{background:#f8f9fb;border-left:4px solid var(--red);padding:12px 14px;margin:10px 0;border-radius:8px}.quizbox{max-width:850px;margin:auto}.option{display:block;padding:13px;border:1px solid var(--line);border-radius:12px;margin:9px 0;cursor:pointer}.option:hover{background:#fafafa}.option input{margin-right:8px}.progress{height:10px;background:#e7e9ed;border-radius:20px;overflow:hidden;margin:15px 0}.bar{height:100%;background:var(--red);width:0}.feedback{padding:13px;border-radius:12px;margin-top:12px}.ok{background:#eaf8ef}.bad{background:#fff0f0}.small{font-size:13px;color:var(--muted)}
-/* DIGITAL DZ V7 — enrichissements */
+/* DIGITAL DZ V5 — enrichissements */
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .actions .btn{margin:0}
 .v5-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
@@ -35,139 +35,107 @@ main{max-width:1200px;margin:auto;padding:35px 18px 80px}.hero{background:#11182
 footer{background:#111821;color:#dfe4ea;padding:35px 18px;text-align:center}
 @media(max-width:700px){.nav{align-items:flex-start}.nav nav{display:none}.hero{padding:30px 22px}.modal-box{padding:20px}}
 
-/* DIGITAL DZ — fonctionnalités 1 à 15 */
-.dz-panel{background:rgba(7,18,37,.92);border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px 0;box-shadow:0 12px 30px rgba(0,0,0,.18)}
-.dz-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.dz-card{background:rgba(9,22,43,.94);border:1px solid var(--line);border-radius:16px;padding:18px}
-.dz-card h3{margin:8px 0}.dz-card p{color:var(--muted)}
-.dz-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.dz-input,.dz-select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#020816;color:var(--ink);outline:none}
-.dz-input:focus,.dz-select:focus{border-color:var(--red)}
-.dz-progress{height:14px;background:#17243a;border-radius:99px;overflow:hidden}.dz-progress>span{display:block;height:100%;width:0;background:var(--red);transition:.3s}
-.dz-badge{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,31,61,.5);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800;background:rgba(255,31,61,.08)}
-.dz-notice{padding:12px 14px;border-left:4px solid var(--red);background:rgba(255,31,61,.08);border-radius:8px;margin:12px 0}
-.dz-search{max-width:720px;margin:0 auto 18px}.dz-result{cursor:pointer;transition:.2s}.dz-result:hover{transform:translateY(-2px);border-color:var(--red)}
-.dz-history-item{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
-.dz-notif{position:fixed;right:18px;bottom:18px;z-index:9999;max-width:360px;background:#081426;border:1px solid var(--red);color:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 12px 35px rgba(0,0,0,.35);display:none}
-.dz-sticky-actions{position:fixed;right:18px;bottom:18px;z-index:9998;display:flex;gap:8px;flex-direction:column}
-.dz-fav{font-size:22px;cursor:pointer;background:none;border:0;color:#fff}.dz-fav.active{color:var(--red)}
-.dz-order{display:grid;grid-template-columns:1fr 1fr;gap:14px}.dz-order .full{grid-column:1/-1}
-.dz-video{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#000}.dz-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.dz-mobile-menu{display:none}
-@media(max-width:900px){.dz-grid{grid-template-columns:1fr 1fr}.dz-order{grid-template-columns:1fr}.dz-order .full{grid-column:auto}}
-@media(max-width:700px){.dz-grid{grid-template-columns:1fr}.dz-actions .btn{width:100%}.dz-sticky-actions{right:10px;bottom:10px}.dz-mobile-menu{display:block}.dz-mobile-menu select{width:100%}}
+/* V5 — style uniforme pour tous les boutons */
+.btn,
+.btn.secondary,
+.actions .btn,
+.v5-card .btn{
+  background:var(--red) !important;
+  color:#fff !important;
+  border:1px solid var(--red) !important;
+  text-decoration:none !important;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  border-radius:10px;
+  font-weight:800;
+  padding:12px 18px;
+  cursor:pointer;
+}
+.btn:hover,
+.btn.secondary:hover,
+.actions .btn:hover,
+.v5-card .btn:hover{
+  opacity:.9;
+  transform:translateY(-1px);
+}
 
-
-/* DIGITAL DZ V7 — organisation claire du tableau de bord */
-.v7-shell{display:grid;grid-template-columns:245px minmax(0,1fr);gap:20px;align-items:start;margin:24px 0}
-.v7-side{position:sticky;top:92px;background:#071225;border:1px solid #1b2b45;border-radius:18px;padding:14px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
-.v7-side h3{margin:8px 10px 14px;color:#fff}
-.v7-group-title{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#8e9bb2;font-weight:800;margin:16px 10px 7px}
-.v7-link{display:flex;align-items:center;gap:9px;width:100%;padding:10px 11px;margin:3px 0;border:0;border-radius:10px;background:transparent;color:#dfe7f5;text-align:left;cursor:pointer;font-weight:700}
-.v7-link:hover{background:#10203a;color:#fff}
-.v7-main{min-width:0}
-.v7-welcome{background:linear-gradient(135deg,#071225,#0c1c35);border:1px solid #1b2b45;border-radius:20px;padding:22px;margin-bottom:18px}
-.v7-welcome-row{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
-.v7-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
-.v7-kpi{background:#0b1930;border:1px solid #1b2b45;border-radius:14px;padding:14px}.v7-kpi b{font-size:22px;color:#fff}.v7-kpi span{display:block;color:#9eabc0;font-size:12px;margin-top:4px}
-.v7-section{margin:22px 0}.v7-section-head{display:flex;justify-content:space-between;align-items:end;gap:10px;margin-bottom:10px}.v7-section-head h3{margin:0;color:#fff;font-size:21px}.v7-section-head p{margin:3px 0 0;color:#9eabc0;font-size:13px}
-.v7-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.v7-card{background:#071225;border:1px solid #1b2b45;border-radius:15px;padding:16px}.v7-card h4{margin:8px 0;color:#fff}.v7-card p{color:#9eabc0;font-size:13px;min-height:34px}.v7-card .btn{margin-top:7px}
-.v7-chip{display:inline-flex;border:1px solid rgba(255,31,61,.5);background:rgba(255,31,61,.08);color:#fff;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800}
-@media(max-width:950px){.v7-shell{grid-template-columns:1fr}.v7-side{position:static}.v7-kpis{grid-template-columns:repeat(2,1fr)}.v7-cards{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.v7-kpis,.v7-cards{grid-template-columns:1fr}.v7-side{display:none}.v7-welcome{padding:18px}}
 </style>
+
+<!-- DIGITAL DZ — Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+
+<style>
+.firebase-panel{margin:22px auto;max-width:1180px;border:1px solid rgba(255,31,61,.28);}
+.firebase-head{display:flex;gap:18px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;}
+.firebase-status{padding:10px 14px;border-radius:999px;background:rgba(255,31,61,.10);border:1px solid rgba(255,31,61,.28);font-size:13px;font-weight:800;}
+.firebase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px;}
+.firebase-box,.firebase-user{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(7,18,37,.72);}
+.firebase-box h3,.firebase-user h3{margin-top:0;}
+.firebase-box label{display:block;margin:10px 0 6px;font-weight:700;font-size:14px;}
+.firebase-box input{width:100%;box-sizing:border-box;padding:12px 13px;border-radius:10px;border:1px solid var(--line);background:#fff;color:#111;margin-bottom:4px;}
+.firebase-box .btn{margin-top:12px;}
+.firebase-secondary{opacity:.9;margin-left:8px;}
+.firebase-msg{margin-top:10px;font-size:13px;min-height:18px;}
+.firebase-user{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-top:18px;}
+@media(max-width:760px){.firebase-grid{grid-template-columns:1fr}.firebase-user{flex-direction:column;align-items:flex-start}.firebase-secondary{margin-left:0;display:flex!important;width:100%;}.firebase-box .btn{width:100%;}}
+</style>
+
 </head>
 <body>
-<div id="dzToast" class="dz-notif"></div>
-<header><div class="nav"><div><div class="brand">DIGITAL <span>DZ</span></div><div class="tag">Apprendre • Créer • Vendre • Progresser</div></div><nav><button onclick="scrollToId('programme')">Programme</button><button onclick="scrollToId('tests')">Tests</button><button onclick="scrollToId('espace-fonctions')">Mon espace</button></nav></div></header>
+<header><div class="nav"><div><div class="brand">DIGITAL <span>DZ</span></div><div class="tag">Apprendre • Créer • Vendre • Progresser</div></div><nav><button onclick="scrollToId('programme')">Programme</button><button onclick="scrollToId('tests')">Tests</button></nav></div></header>
 <main>
-<div class="v7-shell" id="dashboard">
-  <aside class="v7-side">
-    <h3>🎓 DIGITAL DZ</h3>
-    <div class="v7-group-title">Accueil</div>
-    <button class="v7-link" onclick="scrollToId('dashboard')">🏠 Tableau de bord</button>
-    <div class="v7-group-title">Formation</div>
-    <button class="v7-link" onclick="scrollToId('programme')">📚 28 modules</button>
-    <button class="v7-link" onclick="scrollToId('tests')">📝 160 tests</button>
-    <button class="v7-link" onclick="scrollToId('v5-challenge')">🔥 Challenge 30 jours</button>
-    <div class="v7-group-title">Mon espace</div>
-    <button class="v7-link" onclick="dzOpenDashboard()">📊 Ma progression</button>
-    <button class="v7-link" onclick="openV5Missions()">🎯 Mes missions</button>
-    <button class="v7-link" onclick="dzOpenBadges()">🏆 Mes badges</button>
-    <button class="v7-link" onclick="dzOpenHistory()">📈 Mes scores</button>
-    <button class="v7-link" onclick="openV5Certificate()">🎓 Mon attestation</button>
-    <div class="v7-group-title">Ressources</div>
-    <button class="v7-link" onclick="dzOpenSearch()">🔎 Rechercher</button>
-    <button class="v7-link" onclick="dzOpenFavorites()">❤️ Favoris</button>
-    <button class="v7-link" onclick="dzOpenDownloads()">📥 Téléchargements</button>
-    <button class="v7-link" onclick="dzOpenVideos()">🎥 Vidéos</button>
-    <button class="v7-link" onclick="dzOpenAI()">🤖 Assistant IA</button>
-    <button class="v7-link" onclick="location.href='ressources.html'">🌐 Boîte à outils</button>
-    <div class="v7-group-title">Commande & support</div>
-    <button class="v7-link" onclick="dzOpenWhatsApp()">💬 WhatsApp</button>
-    <button class="v7-link" onclick="dzOpenOrder()">🛒 Commander</button>
-  </aside>
-  <div class="v7-main">
-    <div class="v7-welcome">
-      <div class="v7-welcome-row">
-        <div><span class="v7-chip">ESPACE APPRENANT</span><h2 style="margin:9px 0 4px;color:#fff">Bienvenue dans votre parcours DIGITAL DZ 👋</h2><p style="margin:0;color:#aab5ca">Tout est organisé par parcours : apprendre → pratiquer → tester → mesurer → progresser.</p></div>
-        <button class="btn" onclick="scrollToId('programme')">▶ Continuer la formation</button>
-      </div>
-      <div class="v7-kpis">
-        <div class="v7-kpi"><b>28</b><span>Modules</span></div>
-        <div class="v7-kpi"><b>160</b><span>Tests</span></div>
-        <div class="v7-kpi"><b>30</b><span>Jours de challenge</span></div>
-        <div class="v7-kpi"><b id="v7ProgressKpi">0%</b><span>Progression missions</span></div>
-      </div>
+
+
+<section id="firebase-espace" class="card firebase-panel">
+  <div class="firebase-head">
+    <div>
+      <div class="pill">ESPACE APPRENANT</div>
+      <h2 class="section-title" style="margin-bottom:6px">🔐 Mon compte DIGITAL DZ</h2>
+      <p class="sub">Connectez-vous pour sauvegarder votre parcours, vos résultats et votre progression.</p>
+    </div>
+    <div id="firebaseStatus" class="firebase-status">Connexion Firebase : préparation…</div>
+  </div>
+
+  <div id="firebaseAuthForms" class="firebase-grid">
+    <div class="firebase-box">
+      <h3>Créer mon compte</h3>
+      <label>Nom et prénom</label>
+      <input id="regName" type="text" placeholder="Votre nom et prénom">
+      <label>Email</label>
+      <input id="regEmail" type="email" placeholder="vous@email.com">
+      <label>Mot de passe</label>
+      <input id="regPassword" type="password" placeholder="6 caractères minimum">
+      <button class="btn" onclick="digitalDZRegister()">Créer mon compte</button>
+      <div id="regMsg" class="firebase-msg"></div>
     </div>
 
-    <div class="v7-section">
-      <div class="v7-section-head"><div><h3>📚 1. Apprendre</h3><p>Commencez par les modules et avancez dans l'ordre.</p></div></div>
-      <div class="v7-cards">
-        <div class="v7-card"><span class="v7-chip">PARCOURS</span><h4>28 modules</h4><p>Les cours, objectifs, exercices et actions pratiques.</p><button class="btn" onclick="scrollToId('programme')">Ouvrir les modules</button></div>
-        <div class="v7-card"><span class="v7-chip">RESSOURCES</span><h4>Boîte à outils</h4><p>Fiverr, Canva, ChatGPT, plateformes et outils utiles.</p><a class="btn" href="ressources.html">Ouvrir</a></div>
-        <div class="v7-card"><span class="v7-chip">IA</span><h4>Assistant IA</h4><p>Créez des prompts adaptés à votre activité.</p><button class="btn" onclick="dzOpenAI()">Utiliser</button></div>
-      </div>
-    </div>
-
-    <div class="v7-section">
-      <div class="v7-section-head"><div><h3>🎯 2. Pratiquer</h3><p>Transformez chaque module en action concrète.</p></div></div>
-      <div class="v7-cards">
-        <div class="v7-card"><span class="v7-chip">MISSIONS</span><h4>28 missions pratiques</h4><p>Une mission pour chaque module.</p><button class="btn" onclick="openV5Missions()">Mes missions</button></div>
-        <div class="v7-card"><span class="v7-chip">CHALLENGE</span><h4>Challenge 30 jours</h4><p>Un plan progressif pour passer à l'action.</p><button class="btn" onclick="scrollToId('v5-challenge')">Voir le challenge</button></div>
-        <div class="v7-card"><span class="v7-chip">FAVORIS</span><h4>Mes favoris</h4><p>Retrouvez rapidement les contenus importants.</p><button class="btn" onclick="dzOpenFavorites()">Ouvrir</button></div>
-      </div>
-    </div>
-
-    <div class="v7-section">
-      <div class="v7-section-head"><div><h3>📝 3. Tester & mesurer</h3><p>Vérifiez vos connaissances et suivez vos résultats.</p></div></div>
-      <div class="v7-cards">
-        <div class="v7-card"><span class="v7-chip">160 QUESTIONS</span><h4>Tests interactifs</h4><p>140 questions de modules + 20 questions finales.</p><button class="btn" onclick="scrollToId('tests')">Commencer</button></div>
-        <div class="v7-card"><span class="v7-chip">HISTORIQUE</span><h4>Mes scores</h4><p>Consultez vos résultats enregistrés.</p><button class="btn" onclick="dzOpenHistory()">Voir mes scores</button></div>
-        <div class="v7-card"><span class="v7-chip">PROGRESSION</span><h4>Mon tableau de bord</h4><p>Vue synthétique de votre parcours.</p><button class="btn" onclick="dzOpenDashboard()">Ouvrir</button></div>
-      </div>
-    </div>
-
-    <div class="v7-section">
-      <div class="v7-section-head"><div><h3>🏆 4. Valider</h3><p>Terminez votre parcours et générez votre attestation interne.</p></div></div>
-      <div class="v7-cards">
-        <div class="v7-card"><span class="v7-chip">BADGES</span><h4>Mes récompenses</h4><p>Badges selon votre progression.</p><button class="btn" onclick="dzOpenBadges()">Voir mes badges</button></div>
-        <div class="v7-card"><span class="v7-chip">ATTESTATION</span><h4>Mon attestation</h4><p>Attestation interne de progression.</p><button class="btn" onclick="openV5Certificate()">Générer</button></div>
-        <div class="v7-card"><span class="v7-chip">SUPPORT</span><h4>Besoin d'aide ?</h4><p>Contactez DIGITAL DZ directement sur WhatsApp.</p><button class="btn" onclick="dzOpenWhatsApp()">Contacter</button></div>
-      </div>
-    </div>
-
-    <div class="v7-section">
-      <div class="v7-section-head"><div><h3>🛒 5. Acheter / commander</h3><p>Commande de la formation avec paiement à la livraison.</p></div></div>
-      <div class="v7-cards">
-        <div class="v7-card"><span class="v7-chip">COD</span><h4>Paiement à la livraison</h4><p>Demandez votre formation et recevez votre carte d'accès.</p><button class="btn" onclick="dzOpenOrder('cod')">Commander</button></div>
-        <div class="v7-card"><span class="v7-chip">ACCÈS</span><h4>Code de carte PVC</h4><p>Entrez le code reçu avec votre carte pour accéder au parcours.</p><button class="btn" onclick="dzOpenAccess()">Entrer mon code</button></div>
-        <div class="v7-card"><span class="v7-chip">MOBILE</span><h4>Sur smartphone</h4><p>Le parcours reste utilisable sur téléphone.</p><button class="btn" onclick="dzMobileMode()">Mode mobile</button></div>
-      </div>
+    <div class="firebase-box">
+      <h3>J’ai déjà un compte</h3>
+      <label>Email</label>
+      <input id="loginEmail" type="email" placeholder="vous@email.com">
+      <label>Mot de passe</label>
+      <input id="loginPassword" type="password" placeholder="Votre mot de passe">
+      <button class="btn" onclick="digitalDZLogin()">Se connecter</button>
+      <button class="btn firebase-secondary" onclick="digitalDZResetPassword()">Mot de passe oublié</button>
+      <div id="loginMsg" class="firebase-msg"></div>
     </div>
   </div>
-</div>
+
+  <div id="firebaseUserBox" class="firebase-user" style="display:none">
+    <div>
+      <h3 id="firebaseWelcome">Bienvenue</h3>
+      <p id="firebaseUserEmail" class="sub"></p>
+      <p>Votre compte Firebase est connecté. Les prochaines étapes permettront de synchroniser votre progression, vos tests, vos badges et votre accès PVC.</p>
+    </div>
+    <button class="btn" onclick="digitalDZLogout()">Se déconnecter</button>
+  </div>
+</section>
+
 <section class="hero">
 <div class="pill">FORMATION DIGITALE COMPLÈTE</div>
 <h1>Apprenez à créer des revenus en ligne, étape par étape.</h1>
@@ -175,7 +143,7 @@ footer{background:#111821;color:#dfe4ea;padding:35px 18px;text-align:center}
 <div class="actions">
 <button class="btn" onclick="scrollToId('programme')">Commencer la formation</button>
 <a class="btn" href="ressources.html">🌐 Boîte à outils</a>
-<button class="btn secondary" onclick="scrollToId('espace-apprenant')">🎓 Espace apprenant</button>
+<a class="btn" href="#espace-apprenant">🎓 Espace apprenant</a>
 </div>
 </section>
 
@@ -195,7 +163,7 @@ footer{background:#111821;color:#dfe4ea;padding:35px 18px;text-align:center}
 
 
 <section id="espace-apprenant">
-<h2 class="section-title">🎓 Espace apprenant V7</h2>
+<h2 class="section-title">🎓 Espace apprenant V5</h2>
 <p class="sub">Passez de la lecture à l'action : missions, progression, ressources téléchargeables et attestation interne.</p>
 <div class="v5-grid">
   <div class="v5-card">
@@ -252,54 +220,6 @@ footer{background:#111821;color:#dfe4ea;padding:35px 18px;text-align:center}
 </div>
 </section>
 
-
-
-<section id="espace-fonctions" class="dz-panel" style="display:none">
-  <h2 class="section-title">🚀 Votre espace DIGITAL DZ</h2>
-  <p class="sub">Toutes les nouvelles fonctions sont réunies ici : accès, progression, recherche, favoris, ressources, vidéos, IA, commande et support.</p>
-  <div class="dz-grid">
-    <div class="dz-card"><span class="dz-badge">🔐 1 — Accès</span><h3>Connexion avec code</h3><p>Entrez le code reçu avec votre carte PVC.</p><button class="btn" onclick="dzOpenAccess()">🔑 Entrer mon code</button></div>
-    <div class="dz-card"><span class="dz-badge">📊 2 — Progression</span><h3>Mon tableau de bord</h3><p>Suivez modules, missions et tests.</p><button class="btn" onclick="dzOpenDashboard()">📊 Ouvrir mon espace</button></div>
-    <div class="dz-card"><span class="dz-badge">🏆 3 — Récompenses</span><h3>Badges</h3><p>Débloquez des badges selon votre parcours.</p><button class="btn" onclick="dzOpenBadges()">🏆 Voir mes badges</button></div>
-    <div class="dz-card"><span class="dz-badge">🎓 4 — Attestation</span><h3>Mon attestation</h3><p>Générez votre attestation interne de progression.</p><button class="btn" onclick="openV5Certificate()">🎓 Générer</button></div>
-    <div class="dz-card"><span class="dz-badge">📝 5 — Tests</span><h3>Historique des scores</h3><p>Retrouvez vos résultats et vos meilleures performances.</p><button class="btn" onclick="dzOpenHistory()">📝 Mes scores</button></div>
-    <div class="dz-card"><span class="dz-badge">🔎 6 — Recherche</span><h3>Rechercher un cours</h3><p>Trouvez rapidement un module, une ressource ou un mot-clé.</p><button class="btn" onclick="dzOpenSearch()">🔎 Rechercher</button></div>
-    <div class="dz-card"><span class="dz-badge">❤️ 7 — Favoris</span><h3>Mes favoris</h3><p>Enregistrez les modules que vous souhaitez revoir.</p><button class="btn" onclick="dzOpenFavorites()">❤️ Mes favoris</button></div>
-    <div class="dz-card"><span class="dz-badge">📥 8 — Ressources</span><h3>Téléchargements</h3><p>Accédez aux modèles et ressources pratiques.</p><button class="btn" onclick="dzOpenDownloads()">📥 Télécharger</button></div>
-    <div class="dz-card"><span class="dz-badge">🎥 9 — Vidéos</span><h3>Vidéos & tutoriels</h3><p>Tutoriels vidéo pour accompagner les modules.</p><button class="btn" onclick="dzOpenVideos()">🎥 Voir les tutoriels</button></div>
-    <div class="dz-card"><span class="dz-badge">🤖 10 — IA</span><h3>Assistant IA</h3><p>Générez un prompt adapté à votre besoin.</p><button class="btn" onclick="dzOpenAI()">🤖 Utiliser l'assistant</button></div>
-    <div class="dz-card"><span class="dz-badge">💬 11 — Support</span><h3>WhatsApp</h3><p>Contactez le support depuis votre téléphone.</p><button class="btn" onclick="dzOpenWhatsApp()">💬 Contacter</button></div>
-    <div class="dz-card"><span class="dz-badge">🛒 12 — Commande</span><h3>Commander DIGITAL DZ</h3><p>Présentez l'offre et passez une commande.</p><button class="btn" onclick="dzOpenOrder()">🛒 Commander</button></div>
-    <div class="dz-card"><span class="dz-badge">📦 13 — Paiement</span><h3>Paiement à la livraison</h3><p>Formulaire de commande prévu pour la livraison en Algérie.</p><button class="btn" onclick="dzOpenOrder('cod')">📦 Commander en COD</button></div>
-    <div class="dz-card"><span class="dz-badge">📱 14 — Mobile</span><h3>Mode mobile</h3><p>Interface responsive et raccourcis adaptés au téléphone.</p><button class="btn" onclick="dzMobileMode()">📱 Activer le mode mobile</button></div>
-    <div class="dz-card"><span class="dz-badge">🔔 15 — Notifications</span><h3>Rappels</h3><p>Activez des rappels locaux pour continuer votre parcours.</p><button class="btn" onclick="dzEnableReminder()">🔔 Activer</button></div>
-  </div>
-</section>
-
-<section id="dz-order" class="dz-panel" style="display:none">
-  <h2 class="section-title">🛒 Commander DIGITAL DZ</h2>
-  <div class="dz-notice"><b>Paiement à la livraison</b><br>Le formulaire enregistre une demande de commande. Le prix doit être confirmé avant publication définitive de l'offre.</div>
-  <form onsubmit="dzSubmitOrder(event)">
-    <div class="dz-order">
-      <div><label>Nom et prénom</label><input class="dz-input" id="dzName" required></div>
-      <div><label>Téléphone</label><input class="dz-input" id="dzPhone" type="tel" required></div>
-      <div><label>Wilaya</label><input class="dz-input" id="dzWilaya" required placeholder="Ex. Alger"></div>
-      <div><label>Commune</label><input class="dz-input" id="dzCommune" required></div>
-      <div class="full"><label>Adresse de livraison</label><input class="dz-input" id="dzAddress" required></div>
-      <div><label>Mode</label><select class="dz-select" id="dzPay"><option>Paiement à la livraison</option></select></div>
-      <div><label>Produit</label><select class="dz-select" id="dzProduct"><option>DIGITAL DZ — Formation complète</option></select></div>
-    </div>
-    <div class="dz-actions" style="margin-top:14px"><button class="btn" type="submit">📦 Envoyer ma commande</button><button class="btn" type="button" onclick="dzCloseOrder()">Fermer</button></div>
-  </form>
-  <div id="dzOrderResult"></div>
-</section>
-
-<section id="dz-search-area" class="dz-panel" style="display:none">
-  <h2 class="section-title">🔎 Recherche DIGITAL DZ</h2>
-  <div class="dz-search"><input class="dz-input" id="dzSearchInput" placeholder="Ex. Canva, freelance, SEO, produit digital…" oninput="dzSearch(this.value)"></div>
-  <div id="dzSearchResults" class="dz-grid"></div>
-</section>
-
 <section id="programme">
 <h2 class="section-title">Les 28 cours</h2>
 <p class="sub">Cliquez sur un module pour ouvrir le cours.</p>
@@ -349,7 +269,7 @@ function openModule(id){
  <h3>Le cours</h3>${m.lessons.map(x=>`<div class="lesson">${x}</div>`).join('')}
  <h3>Exercice pratique</h3><div class="lesson">${m.exercise}</div>
  <h3>Action</h3><div class="lesson">${m.action}</div>
- <div style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="startModuleQuiz(${m.id})">Tester ce module</button><button class="btn secondary" onclick="openModule(${m.id===28?1:m.id+1})">${m.id===28?'Revenir au module 1':'Module suivant →'}</button></div>`);
+ <div style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="startModuleQuiz(${m.id})">Tester ce module</button><button class="btn" onclick="openModule(${m.id===28?1:m.id+1})">${m.id===28?'Revenir au module 1':'Module suivant →'}</button></div>`);
 }
 function openResource(type){
  let title='', body='';
@@ -468,61 +388,141 @@ function showResult(){
  document.getElementById('quizBar').style.width='100%';
  const pct=Math.round(qScore/quizPool.length*100);
  document.getElementById('quizMeta').innerHTML='<b>Résultat</b>';
- if(typeof dzTrackQuiz==='function') dzTrackQuiz(quizPool.length===questions.length?'Examen — 160 questions':(quizPool[0]?.module||'Test module'),pct);
  document.getElementById('quizArea').innerHTML=`<div class="card"><h2>${qScore} / ${quizPool.length}</h2><p style="font-size:22px;font-weight:900">${pct}%</p><p>${pct>=70?'Bravo : tu as atteint le seuil indicatif de 70 %.':'Continue à revoir les cours puis retente le test.'}</p><button class="btn" onclick="startQuiz(0)">Recommencer les 160 tests</button></div>`;clearQuizState();
 }
 const grid=document.getElementById('moduleGrid');
 grid.innerHTML=modules.map(m=>`<div class="card module-card" onclick="openModule(${m.id})"><span class="pill">Module ${m.id}</span><h3>${m.title}</h3><p>${m.goal}</p><div class="link">Ouvrir le cours →</div></div>`).join('');
 
 window.addEventListener('load',()=>{try{const st=JSON.parse(localStorage.getItem(QUIZ_STATE_KEY)||'null');if(st&&st.mode==='all'&&st.qi>=0&&st.qi<questions.length){const b=document.getElementById('resumeBox');if(b)b.style.display='block';setTimeout(()=>resumeQuiz(),150);}}catch(e){}});
-
-
-/* DIGITAL DZ — fonctions 1 à 15 */
-const DZ_KEY='digital_dz_v6_state';
-let dzState=JSON.parse(localStorage.getItem(DZ_KEY)||'{}');
-dzState.access=dzState.access||false; dzState.code=dzState.code||''; dzState.favorites=dzState.favorites||[]; dzState.history=dzState.history||[]; dzState.notifications=dzState.notifications||false;
-function dzSave(){localStorage.setItem(DZ_KEY,JSON.stringify(dzState));}
-function dzToast(msg){let e=document.getElementById('dzToast');if(!e){e=document.createElement('div');e.id='dzToast';e.className='dz-notif';document.body.appendChild(e)}e.innerHTML=msg;e.style.display='block';clearTimeout(window.__dzT);window.__dzT=setTimeout(()=>e.style.display='none',4000);}
-function dzOpenAccess(){openModal(`<h2>🔐 Accès à votre formation</h2><p>Entrez le code figurant sur votre carte PVC DIGITAL DZ.</p><input id="dzAccessCode" class="dz-input" placeholder="Votre code d'accès" maxlength="32"><div class="dz-notice">Prototype actuel : la validation est locale. Pour une vraie protection commerciale, nous connecterons cette fonction à Supabase avant la mise en vente.</div><button class="btn" onclick="dzLogin()">🔓 Ouvrir mon accès</button>`);}
-function dzLogin(){const c=(document.getElementById('dzAccessCode')?.value||'').trim();if(c.length<4){alert('Entrez un code valide.');return;}dzState.access=true;dzState.code=c;dzSave();closeModal();dzToast('✅ Accès enregistré sur cet appareil.');dzOpenDashboard();}
-function dzOpenDashboard(){
- const missionDone=(typeof v5Done!=='undefined'?v5Done.length:0); const missionPct=Math.round(missionDone/28*100); const history=dzState.history.length; const fav=dzState.favorites.length;
- openModal(`<h2>📊 Mon tableau de bord</h2><div class="dz-grid"><div class="dz-card"><h3>${missionPct}%</h3><p>Progression des missions</p><div class="dz-progress"><span style="width:${missionPct}%"></span></div></div><div class="dz-card"><h3>${history}</h3><p>Tests enregistrés</p></div><div class="dz-card"><h3>${fav}</h3><p>Favoris</p></div></div><div class="dz-actions" style="margin-top:14px"><button class="btn" onclick="scrollToId('programme');closeModal()">📚 Continuer les modules</button><button class="btn" onclick="startQuiz(0);closeModal()">📝 Faire un test</button></div>`);
-}
-function dzOpenBadges(){const done=(typeof v5Done!=='undefined'?v5Done.length:0);const score=dzState.history.reduce((a,b)=>Math.max(a,b.score||0),0);const badges=[['🌱','Départ','Première connexion',dzState.access],['📚','Apprenant','7 missions terminées',done>=7],['🔥','Régulier','14 missions terminées',done>=14],['🚀','Avancé','28 missions terminées',done>=28],['🏆','Testeur','Score de 80%+',score>=80]];openModal('<h2>🏆 Mes badges</h2><div class="dz-grid">'+badges.map(b=>`<div class="dz-card" style="opacity:${b[3]?1:.45}"><div style="font-size:32px">${b[0]}</div><h3>${b[1]}</h3><p>${b[2]}</p><span class="dz-badge">${b[3]?'Débloqué':'À débloquer'}</span></div>`).join('')+'</div>');}
-function dzOpenHistory(){if(!dzState.history.length){openModal('<h2>📝 Historique</h2><p>Aucun test enregistré pour le moment.</p><button class="btn" onclick="startQuiz(0);closeModal()">Commencer un test</button>');return;}openModal('<h2>📝 Historique des scores</h2>'+dzState.history.slice().reverse().map(x=>`<div class="dz-history-item"><span>${x.label}</span><b>${x.score}%</b></div>`).join(''));}
-function dzOpenSearch(){const a=document.getElementById('dz-search-area');a.style.display='block';document.getElementById('dzSearchInput').focus();scrollToId('dz-search-area');dzSearch('');}
-function dzSearch(q){const box=document.getElementById('dzSearchResults');if(!box)return;q=(q||'').toLowerCase().trim();let rows=modules.filter(m=>!q||[m.title,m.goal,...m.objectives,m.lessons?.join(' ')||''].join(' ').toLowerCase().includes(q)).slice(0,18);box.innerHTML=rows.length?rows.map(m=>`<div class="dz-card dz-result" onclick="openModule(${m.id})"><span class="dz-badge">Module ${m.id}</span><h3>${m.title}</h3><p>${m.goal}</p></div>`).join(''):'<div class="dz-card"><h3>Aucun résultat</h3><p>Essayez un autre mot-clé.</p></div>';}
-function dzToggleFavorite(id){const i=dzState.favorites.indexOf(id);if(i>=0)dzState.favorites.splice(i,1);else dzState.favorites.push(id);dzSave();}
-function dzOpenFavorites(){const rows=dzState.favorites.map(id=>modules.find(m=>m.id===id)).filter(Boolean);openModal('<h2>❤️ Mes favoris</h2>'+ (rows.length?'<div class="dz-grid">'+rows.map(m=>`<div class="dz-card"><button class="dz-fav active" onclick="dzToggleFavorite(${m.id});dzOpenFavorites()">♥</button><h3>${m.title}</h3><button class="btn" onclick="openModule(${m.id})">Ouvrir</button></div>`).join('')+'</div>':'<p>Aucun favori. Dans un module, ajoutez-le à vos favoris.</p>'));}
-function dzOpenDownloads(){openModal(`<h2>📥 Téléchargements</h2><div class="dz-grid"><div class="dz-card"><h3>🧰 Boîte à outils</h3><p>Fiverr, Upwork, Canva, ChatGPT, Supabase et autres.</p><a class="btn" href="ressources.html">Ouvrir</a></div><div class="dz-card"><h3>📦 Modèles</h3><p>Modèles pratiques du parcours.</p><a class="btn" href="DIGITAL_DZ_MODELES.zip" download>Télécharger</a></div><div class="dz-card"><h3>📄 Ressources</h3><p>Accès aux ressources du site.</p><a class="btn" href="ressources.html">Voir</a></div></div>`);}
-function dzOpenVideos(){const links=[['Module 1 — revenus en ligne','https://www.youtube.com/results?search_query=revenus+en+ligne+freelance+francais'],['Canva — débuter','https://www.youtube.com/results?search_query=Canva+tutoriel+francais+debutant'],['ChatGPT — prompts','https://www.youtube.com/results?search_query=ChatGPT+prompts+francais'],['E-commerce — débuter','https://www.youtube.com/results?search_query=ecommerce+algerie+debutant']];openModal('<h2>🎥 Vidéos & tutoriels</h2><div class="dz-grid">'+links.map(x=>`<div class="dz-card"><h3>${x[0]}</h3><a class="btn" target="_blank" rel="noopener" href="${x[1]}">▶ Voir sur YouTube</a></div>`).join('')+'</div><p class="small">Les résultats YouTube peuvent changer. Vérifiez la qualité et l’actualité des tutoriels.</p>');}
-function dzOpenAI(){openModal(`<h2>🤖 Assistant IA</h2><p>Décrivez ce que vous voulez faire et DIGITAL DZ prépare un prompt à copier dans votre assistant IA.</p><textarea id="dzAIInput" class="dz-input" rows="4" placeholder="Ex. Je veux créer un produit digital pour les étudiants algériens..."></textarea><button class="btn" style="margin-top:10px" onclick="dzGeneratePrompt()">✨ Générer le prompt</button><div id="dzAIResult"></div>`);}
-function dzGeneratePrompt(){const q=(document.getElementById('dzAIInput')?.value||'').trim();if(!q){alert('Décrivez votre besoin.');return;}const prompt=`Tu es mon assistant DIGITAL DZ. Je suis en Algérie et je veux ${q}. Donne-moi un plan pratique étape par étape, les outils gratuits à utiliser, les risques à éviter, un exemple concret et les prochaines actions à réaliser aujourd'hui. Ne promets aucun revenu garanti.`;document.getElementById('dzAIResult').innerHTML=`<div class="dz-notice"><b>Prompt prêt à copier :</b><br><textarea class="dz-input" rows="8" readonly>${prompt.replace(/</g,'&lt;')}</textarea><button class="btn" style="margin-top:8px" onclick="navigator.clipboard?.writeText(${JSON.stringify(prompt)});dzToast('📋 Prompt copié')">📋 Copier</button></div>`;}
-function dzOpenWhatsApp(){const number='';if(!number){openModal('<h2>💬 Support WhatsApp</h2><p>Ajoutez votre numéro WhatsApp professionnel dans le code du site pour activer ce bouton.</p><div class="dz-notice">Exemple de format : 213XXXXXXXXX</div>');return;}window.open('https://wa.me/'+number+'?text='+encodeURIComponent('Bonjour DIGITAL DZ, je souhaite avoir des informations sur la formation.'),'_blank');}
-function dzOpenOrder(mode){const s=document.getElementById('dz-order');s.style.display='block';scrollToId('dz-order');if(mode==='cod')document.getElementById('dzPay').value='Paiement à la livraison';}
-function dzCloseOrder(){document.getElementById('dz-order').style.display='none';}
-function dzSubmitOrder(e){e.preventDefault();const data={name:document.getElementById('dzName').value,phone:document.getElementById('dzPhone').value,wilaya:document.getElementById('dzWilaya').value,commune:document.getElementById('dzCommune').value,address:document.getElementById('dzAddress').value,payment:document.getElementById('dzPay').value,product:document.getElementById('dzProduct').value,date:new Date().toISOString()};localStorage.setItem('digital_dz_last_order',JSON.stringify(data));document.getElementById('dzOrderResult').innerHTML='<div class="dz-notice">✅ Demande enregistrée sur cet appareil. Pour recevoir réellement les commandes, connectez ensuite ce formulaire à Supabase, WhatsApp ou votre système de commande.</div>';}
-function dzMobileMode(){document.documentElement.style.scrollBehavior='smooth';document.body.classList.toggle('dz-mobile-on');dzToast('📱 Interface optimisée pour mobile.');}
-function dzEnableReminder(){if(!('Notification' in window)){dzToast('🔔 Les notifications ne sont pas prises en charge par ce navigateur.');return;}Notification.requestPermission().then(p=>{if(p==='granted'){dzState.notifications=true;dzSave();new Notification('DIGITAL DZ',{body:'Votre parcours vous attend. Continuez votre prochaine mission !'});dzToast('🔔 Rappel activé sur cet appareil.');}else dzToast('🔔 Permission non accordée.');});}
-function dzTrackQuiz(label,score){dzState.history.push({label:label||'Test',score:Number(score)||0,date:new Date().toISOString()});dzState.history=dzState.history.slice(-30);dzSave();}
-/* Ajoute un bouton favori dans chaque fiche de module sans casser l'existant. */
-const dzOriginalOpenModule=window.openModule;
-window.openModule=function(id){const m=modules.find(x=>x.id===id);if(!m)return;const fav=dzState.favorites.includes(id);openModal(`<div class="dz-actions"><span class="pill">Module ${m.id}</span><button class="dz-fav ${fav?'active':''}" title="Favori" onclick="dzToggleFavorite(${m.id});openModule(${m.id})">${fav?'♥':'♡'}</button></div><h2>${m.title}</h2><p><b>Objectif :</b> ${m.goal}</p><h3>Objectifs pédagogiques</h3><ul>${m.objectives.map(x=>`<li>${x}</li>`).join('')}</ul><h3>Le cours</h3>${m.lessons.map(x=>`<div class="lesson">${x}</div>`).join('')}<h3>Exercice pratique</h3><div class="lesson">${m.exercise}</div><h3>Action</h3><div class="lesson">${m.action}</div><div style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="startModuleQuiz(${m.id})">Tester ce module</button><button class="btn" onclick="openModule(${m.id===28?1:m.id+1})">${m.id===28?'Revenir au module 1':'Module suivant →'}</button></div>`);};
-/* Intercepte le rendu final du quiz pour mémoriser les scores sans modifier son moteur. */
-const dzOldStartQuiz=window.startQuiz;
-if(typeof dzOldStartQuiz==='function'){window.startQuiz=function(...args){return dzOldStartQuiz.apply(this,args);};}
-setTimeout(()=>{if(typeof dzOpenSearch==='function')dzSearch('');},100);
-
 </script>
 
 <script>
-(function(){
-  function updateV7(){
-    try{var d=JSON.parse(localStorage.getItem('digitalDzV5')||'{}');var done=Array.isArray(d.v5Done)?d.v5Done.length:0;var pct=Math.round(done/28*100);var e=document.getElementById('v7ProgressKpi');if(e)e.textContent=pct+'%';}
-    catch(e){}
+// DIGITAL DZ — Connexion Firebase
+// Configuration Web Firebase DIGITALDZ — prête à être utilisée.
+const DIGITAL_DZ_FIREBASE_CONFIG = {
+  apiKey: "AIzaSyDR5lcEp1Pz9XDFTPMZPLtQuwvQS3Z9g-g",
+  authDomain: "digitaldz-d0ae7.firebaseapp.com",
+  projectId: "digitaldz-d0ae7",
+  storageBucket: "digitaldz-d0ae7.firebasestorage.app",
+  messagingSenderId: "750225094876",
+  appId: "1:750225094876:web:98f8d20d4574de7a599c19",
+  measurementId: "G-LCJB8SR27W"
+};
+
+let digitalDZFirebaseReady = false;
+let digitalDZAuth = null;
+let digitalDZDb = null;
+
+function digitalDZSetMsg(id,msg){
+  const el=document.getElementById(id);
+  if(el) el.textContent=msg||'';
+}
+
+function digitalDZInitFirebase(){
+  const status=document.getElementById('firebaseStatus');
+  try{
+    if(!window.firebase){ throw new Error('SDK Firebase non chargé'); }
+    if(!firebase.apps.length) firebase.initializeApp(DIGITAL_DZ_FIREBASE_CONFIG);
+    digitalDZAuth=firebase.auth();
+    digitalDZDb=firebase.firestore();
+    digitalDZAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    digitalDZFirebaseReady=true;
+    if(status) status.textContent='Firebase : connecté ✓';
+    digitalDZAuth.onAuthStateChanged(digitalDZHandleAuthState);
+  }catch(e){
+    console.error(e);
+    if(status) status.textContent='Firebase : erreur de configuration';
   }
-  updateV7();setInterval(updateV7,1200);
-})();
+}
+
+async function digitalDZRegister(){
+  if(!digitalDZFirebaseReady){ digitalDZSetMsg('regMsg','Firebase n’est pas encore disponible. Rechargez la page puis réessayez.'); return; }
+  const name=(document.getElementById('regName')?.value||'').trim();
+  const email=(document.getElementById('regEmail')?.value||'').trim();
+  const password=document.getElementById('regPassword')?.value||'';
+  if(!name||!email||password.length<6){ digitalDZSetMsg('regMsg','Remplissez les champs. Le mot de passe doit contenir au moins 6 caractères.'); return; }
+  try{
+    digitalDZSetMsg('regMsg','Création du compte…');
+    const cred=await digitalDZAuth.createUserWithEmailAndPassword(email,password);
+    await cred.user.updateProfile({displayName:name});
+    await digitalDZDb.collection('users').doc(cred.user.uid).set({
+      email:email,
+      nom:name,
+      createdAt:firebase.firestore.FieldValue.serverTimestamp(),
+      lastLogin:firebase.firestore.FieldValue.serverTimestamp()
+    },{merge:true});
+    digitalDZSetMsg('regMsg','Compte créé avec succès ✓');
+  }catch(e){
+    digitalDZSetMsg('regMsg',digitalDZFirebaseError(e));
+  }
+}
+
+async function digitalDZLogin(){
+  if(!digitalDZFirebaseReady){ digitalDZSetMsg('loginMsg','Firebase n’est pas encore disponible. Rechargez la page puis réessayez.'); return; }
+  const email=(document.getElementById('loginEmail')?.value||'').trim();
+  const password=document.getElementById('loginPassword')?.value||'';
+  if(!email||!password){ digitalDZSetMsg('loginMsg','Saisissez votre email et votre mot de passe.'); return; }
+  try{
+    digitalDZSetMsg('loginMsg','Connexion…');
+    const cred=await digitalDZAuth.signInWithEmailAndPassword(email,password);
+    await digitalDZDb.collection('users').doc(cred.user.uid).set({
+      email:cred.user.email||email,
+      lastLogin:firebase.firestore.FieldValue.serverTimestamp()
+    },{merge:true});
+    digitalDZSetMsg('loginMsg','Connexion réussie ✓');
+  }catch(e){
+    digitalDZSetMsg('loginMsg',digitalDZFirebaseError(e));
+  }
+}
+
+async function digitalDZResetPassword(){
+  if(!digitalDZFirebaseReady){ digitalDZSetMsg('loginMsg','Firebase n’est pas encore disponible. Rechargez la page puis réessayez.'); return; }
+  const email=(document.getElementById('loginEmail')?.value||'').trim();
+  if(!email){ digitalDZSetMsg('loginMsg','Saisissez votre email pour recevoir le lien de réinitialisation.'); return; }
+  try{
+    await digitalDZAuth.sendPasswordResetEmail(email);
+    digitalDZSetMsg('loginMsg','Email de réinitialisation envoyé ✓');
+  }catch(e){ digitalDZSetMsg('loginMsg',digitalDZFirebaseError(e)); }
+}
+
+async function digitalDZLogout(){
+  if(digitalDZAuth) await digitalDZAuth.signOut();
+}
+
+function digitalDZHandleAuthState(user){
+  const forms=document.getElementById('firebaseAuthForms');
+  const box=document.getElementById('firebaseUserBox');
+  const welcome=document.getElementById('firebaseWelcome');
+  const email=document.getElementById('firebaseUserEmail');
+  const status=document.getElementById('firebaseStatus');
+  if(user){
+    if(forms) forms.style.display='none';
+    if(box) box.style.display='flex';
+    if(welcome) welcome.textContent='Bienvenue '+(user.displayName||'dans votre espace DIGITAL DZ')+' 👋';
+    if(email) email.textContent=user.email||'';
+    if(status) status.textContent='Compte connecté ✓';
+  }else{
+    if(forms) forms.style.display='grid';
+    if(box) box.style.display='none';
+    if(status && digitalDZFirebaseReady) status.textContent='Firebase : prêt ✓';
+  }
+}
+
+function digitalDZFirebaseError(e){
+  const code=e?.code||'';
+  const map={
+    'auth/email-already-in-use':'Cette adresse email est déjà utilisée.',
+    'auth/invalid-email':'Adresse email invalide.',
+    'auth/weak-password':'Mot de passe trop faible.',
+    'auth/invalid-credential':'Email ou mot de passe incorrect.',
+    'auth/user-not-found':'Compte introuvable.',
+    'auth/wrong-password':'Mot de passe incorrect.',
+    'auth/too-many-requests':'Trop de tentatives. Réessayez plus tard.'
+  };
+  return map[code]||('Erreur Firebase : '+(e?.message||code||'erreur inconnue'));
+}
+
+window.addEventListener('DOMContentLoaded',digitalDZInitFirebase);
 </script>
+
 </body></html>
