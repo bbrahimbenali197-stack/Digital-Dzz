@@ -1,20 +1,6 @@
-DIGITAL DZ — SITE FORMATION V2
+DIGITAL DZ V4 — Plateforme d'apprentissage
 
-Pages principales :
-- index.html : accueil
-- formations.html : catalogue
-- formation-vente.html : vente en ligne
-- formation-contenu.html : contenu digital
-- formation-freelance.html : travail en ligne / freelance
-- formation-ia.html : IA
-- formation-site.html : création de site
-- formation-marketing.html : marketing digital
-- methodologie.html : méthode pédagogique
-- espace-etudiant.html : tableau de bord étudiant
-- quiz.html : exemple d'examen
-- inscription.html : inscription de démonstration
-- ressources.html : boîte à outils
-- a-propos.html / contact.html / faq.html
+Ajouts : parcours de progression, défi 30 jours, projets pratiques, boîte à outils, CV & portfolio.
+Objectif : aider l'apprenant à passer de la théorie à la pratique et construire des preuves de compétences.
 
-Cette version est un prototype statique prêt à être branché à un backend (Supabase recommandé) pour comptes, paiement, contenus privés, vidéos, examens et certificats.
-Aucun revenu n'est garanti.
+Pour une version production : connecter authentification, base de données, vidéos, suivi de progression, certificats et paiement.
