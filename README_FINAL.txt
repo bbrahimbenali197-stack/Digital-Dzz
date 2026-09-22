@@ -1,25 +1,20 @@
-DIGITAL DZ — REDESIGN FINAL
+DIGITAL DZ — SITE FORMATION V2
 
-Version : plateforme de formation organisée
+Pages principales :
+- index.html : accueil
+- formations.html : catalogue
+- formation-vente.html : vente en ligne
+- formation-contenu.html : contenu digital
+- formation-freelance.html : travail en ligne / freelance
+- formation-ia.html : IA
+- formation-site.html : création de site
+- formation-marketing.html : marketing digital
+- methodologie.html : méthode pédagogique
+- espace-etudiant.html : tableau de bord étudiant
+- quiz.html : exemple d'examen
+- inscription.html : inscription de démonstration
+- ressources.html : boîte à outils
+- a-propos.html / contact.html / faq.html
 
-Organisation :
-1. Accueil / tableau de bord
-2. Apprendre — 28 modules
-3. Pratiquer — 28 missions + challenge 30 jours
-4. Tester & mesurer — 160 tests + historique
-5. Valider — badges + attestation interne
-6. Commander / support — COD + carte PVC + WhatsApp
-7. Ressources — outils, téléchargements, vidéos, IA
-
-Design :
-- fond clair bleu très léger
-- hero avec visuel technologique DIGITAL DZ
-- palette rouge + bleu + vert + orange + violet
-- cartes blanches lisibles
-- boutons uniformes
-- responsive mobile/tablette/PC
-
-Important :
-- Aucun compte email/Firebase n'est requis dans cette version.
-- Le code PVC est une fonction d'accès côté interface ; une validation serveur est nécessaire pour une sécurité réelle.
-- Le site reste compatible avec GitHub Pages.
+Cette version est un prototype statique prêt à être branché à un backend (Supabase recommandé) pour comptes, paiement, contenus privés, vidéos, examens et certificats.
+Aucun revenu n'est garanti.
