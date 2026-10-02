@@ -20,3 +20,50 @@ function year(){document.querySelectorAll('[data-year]').forEach(e=>e.textConten
 function injectDock(){if(document.querySelector('.quick-dock'))return;let d=document.createElement('div');d.className='quick-dock';d.innerHTML='<a href="espace-etudiant.html" title="Mon espace">🎓</a><a href="assistant-ia.html" title="Assistant IA">🤖</a><a href="laboratoire.html" title="Laboratoire">🧪</a><a href="formations.html" title="Formations">📚</a>';document.body.appendChild(d)}
 function injectSearchShortcut(){document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();location.href='formations.html#search'}})}
 document.addEventListener('DOMContentLoaded',()=>{year();updateUI();injectDock();injectSearchShortcut();});
+
+// Recherche globale DIGITAL DZ — sans base de données
+const DZ_SEARCH_PAGES=[
+ {title:'Accueil',url:'index.html',type:'Page',text:'académie digitale apprendre pratiquer construire'},
+ {title:'Formations',url:'formations.html',type:'Formations',text:'40 formations cours apprentissage'},
+ {title:'Parcours guidés',url:'parcours.html',type:'Parcours',text:'freelance web créativité parcours'},
+ {title:'Apprendre',url:'apprendre.html',type:'Page',text:'méthode apprendre pratiquer construire'},
+ {title:'Projets',url:'projets.html',type:'Page',text:'projets portfolio pratique'},
+ {title:'Ressources',url:'ressources.html',type:'Ressources',text:'pdf vidéos outils ressources'},
+ {title:'Annonces',url:'annonces.html',type:'Actualités',text:'annonces nouveautés informations'},
+ {title:'Communauté',url:'community.html',type:'Communauté',text:'communauté discussions contact'},
+ {title:'Guide général',url:'guide-utilisation.html',type:'Guide',text:'guide utilisation aide'},
+ {title:'Outils',url:'outils.html',type:'Outils',text:'outils digitaux'},
+ {title:'Laboratoire',url:'laboratoire.html',type:'Lab',text:'html css javascript code défis'},
+ {title:'Assistant IA',url:'assistant-ia.html',type:'IA',text:'intelligence artificielle assistant'},
+ {title:'Mon espace',url:'espace-etudiant.html',type:'Étudiant',text:'progression favoris notes'},
+ {title:'FAQ',url:'faq.html',type:'Aide',text:'questions réponses aide'}
+];
+function buildSearchIndex(){
+ const out=[...DZ_SEARCH_PAGES];
+ (window.DZ_DATA?.courses||[]).forEach(c=>{
+   const courseText=[c.title,c.description,c.category,c.level].filter(Boolean).join(' ');
+   out.push({title:c.title,url:'formation.html?id='+encodeURIComponent(c.id),type:'Formation',text:courseText});
+   (c.modules||[]).forEach(m=> (m.lessons||[]).forEach(l=>out.push({title:l.title,url:'lesson.html?course='+encodeURIComponent(c.id)+'&lesson='+encodeURIComponent(l.id),type:'Leçon • '+c.title,text:[l.title,l.description,m.title,c.title].filter(Boolean).join(' ')})));
+ });
+ return out;
+}
+function initGlobalSearch(){
+ const input=document.getElementById('siteSearch'); if(!input)return;
+ const btn=document.getElementById('searchBtn'), results=document.getElementById('searchResults'), meta=document.getElementById('searchMeta');
+ const index=buildSearchIndex();
+ const run=()=>{
+   const q=input.value.trim().toLowerCase();
+   if(!q){meta.textContent='';results.innerHTML='<div class="search-empty">🔎 Commence par écrire un mot-clé ci-dessus.</div>';return;}
+   const terms=q.split(/\s+/).filter(Boolean);
+   const found=index.map(item=>{const hay=(item.title+' '+item.text+' '+item.type).toLowerCase();let score=0;terms.forEach(t=>{if(hay.includes(t))score+=hay.includes(item.title.toLowerCase())?3:1});return {...item,score}}).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,50);
+   meta.textContent=found.length+' résultat'+(found.length>1?'s':'')+' pour « '+input.value+' »';
+   results.innerHTML=found.length?found.map(x=>`<a class="card search-result" href="${x.url}"><small>${x.type}</small><h3>${x.title}</h3><p>${(x.text||'').slice(0,180)}</p></a>`).join(''):'<div class="search-empty">😕 Aucun résultat. Essaie un autre mot-clé.</div>';
+ };
+ btn.addEventListener('click',run); input.addEventListener('keydown',e=>{if(e.key==='Enter')run()}); input.addEventListener('input',()=>{if(!input.value.trim())run()}); run();
+}
+function injectGlobalSearchLink(){
+ const nav=document.querySelector('.navlinks'); if(!nav||nav.querySelector('[data-global-search]'))return;
+ const a=document.createElement('a');a.href='search.html';a.dataset.globalSearch='1';a.textContent='🔎 Recherche';nav.appendChild(a);
+}
+function injectSearchShortcut(){document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();location.href='search.html'}})}
+document.addEventListener('DOMContentLoaded',()=>{injectGlobalSearchLink();initGlobalSearch();});
