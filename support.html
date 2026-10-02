@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support de formation — DIGITAL DZ</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top"><div class="container"><span>🇩🇿 DIGITAL DZ • Support de formation</span><span>Apprendre → Pratiquer → Construire</span></div></div>
+<header class="header"><div class="container nav"><a class="logo" href="index.html">DIGITAL <span>DZ</span></a><nav class="navlinks"><a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="parcours.html">Parcours</a><a href="apprendre.html">Apprendre</a><a href="projets.html">Projets</a><a href="ressources.html">Ressources</a><a href="guide-utilisation.html">📖 Guide général</a><a href="outils.html">Outils</a><a href="assistant-ia.html">🤖 IA</a><a href="espace-etudiant.html">Mon espace</a></nav><a class="btn mobile" href="formations.html">Cours</a></div></header>
+<main id="app"></main>
+<footer class="footer"><div class="container footer-grid"><div><div class="logo">DIGITAL <span>DZ</span></div><p>Support intégré, sans base de données.</p></div><div><b>Apprendre</b><a href="formations.html">40 formations</a><a href="parcours.html">Parcours guidés</a><a href="apprendre.html">Comment apprendre</a></div><div><b>Pratiquer</b><a href="projets.html">Projets</a><a href="quiz.html">Quiz</a></div><div><b>Ressources</b><a href="ressources.html">PDF & supports</a><a href="outils.html">Outils</a><a href="faq.html">FAQ</a></div></div><div class="container center" style="margin-top:25px;font-size:13px">DIGITAL DZ © <span data-year></span></div></footer>
+<script src="data.js"></script><script src="office-data.js"></script><script src="app.js"></script>
+<script>
+const id=qs('course')||qs('id');
+const c=courseById(id)||DZ_DATA.courses[0];
+const lessons=c.modules.flatMap(m=>m.lessons);
+document.title='Support — '+c.title+' — DIGITAL DZ';
+app.innerHTML=`<section class="course-head"><div class="container"><span class="tag">${c.icon} ${c.category}</span><h1>📘 Support : ${c.title}</h1><p>${c.description}</p><div class="actions"><a class="btn" href="formation.html?id=${c.id}">← Retour à la formation</a><a class="btn light" href="ressources.html?course=${c.id}">📚 Ressources</a></div></div></section><section class="section"><div class="container course-layout"><main><div class="card"><h2>Comment utiliser ce support ?</h2><p>Lis les notions, ouvre les leçons correspondantes, réalise les missions puis passe le quiz final. Tout fonctionne directement dans le site.</p></div>${c.modules.map((m,i)=>`<section style="margin-top:30px"><span class="eyebrow dark">MODULE ${i+1}</span><h2>${m.title}</h2><div class="lesson-list">${m.lessons.map((l,j)=>`<a class="lesson" href="lesson.html?course=${c.id}&lesson=${l.id}"><span class="num">${j+1}</span><span style="flex:1"><b>${l.title}</b><small>⏱ ${l.duration} • Ouvrir la leçon →</small></span><span>→</span></a>`).join('')}</div></section>`).join('')}<div class="card" style="margin-top:32px"><h2>🎯 Validation</h2><p>Après les modules, teste tes connaissances avec le quiz.</p><a class="btn" href="quiz.html?course=${c.id}">🧠 Passer le quiz</a></div></main><aside><div class="card side-sticky"><h3>📚 Accès rapide</h3><a class="btn" style="width:100%;margin:7px 0" href="formation.html?id=${c.id}">Formation</a><a class="btn light" style="width:100%;margin:7px 0" href="ressources.html?course=${c.id}">Ressources</a><a class="btn light" style="width:100%;margin:7px 0" href="quiz.html?course=${c.id}">Quiz</a><p style="margin-top:15px">${lessons.length} leçons disponibles.</p></div></aside></div></section>`;
+updateUI();
+</script></body></html>
