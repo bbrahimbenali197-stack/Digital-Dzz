@@ -1,0 +1,9 @@
+
+/* DIGITAL DZ - Security Gate */
+#digitaldz-security-gate{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle at 50% 20%,rgba(0,255,150,.12),transparent 35%),linear-gradient(135deg,#050807,#0b1110 55%,#03150d);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff;}
+#digitaldz-security-gate .ddz-card{width:min(430px,100%);padding:34px 28px;border:1px solid rgba(0,255,150,.35);border-radius:24px;background:rgba(8,14,12,.92);box-shadow:0 25px 80px rgba(0,0,0,.55),0 0 45px rgba(0,255,150,.08);text-align:center;backdrop-filter:blur(14px)}
+#digitaldz-security-gate .ddz-logo{font-size:32px;font-weight:900;letter-spacing:-1px;margin-bottom:8px}.ddz-logo span{color:#00e889}
+#digitaldz-security-gate .ddz-lock{font-size:42px;margin:6px 0 12px}#digitaldz-security-gate h1{margin:0 0 8px;font-size:24px}#digitaldz-security-gate p{margin:0 0 22px;color:#b7c2bd;font-size:14px}
+#digitaldz-security-gate input{width:100%;box-sizing:border-box;padding:14px 16px;border-radius:12px;border:1px solid #34443d;background:#101916;color:#fff;font-size:16px;outline:none;text-align:center}#digitaldz-security-gate input:focus{border-color:#00e889;box-shadow:0 0 0 3px rgba(0,232,137,.12)}
+#digitaldz-security-gate button{width:100%;margin-top:12px;padding:14px 16px;border:0;border-radius:12px;background:#00d982;color:#03120c;font-weight:800;font-size:15px;cursor:pointer}#digitaldz-security-gate button:hover{background:#16f09a}
+#digitaldz-security-gate .ddz-error{min-height:20px;margin-top:10px;color:#ff7b7b;font-size:13px}.ddz-hidden{display:none!important}
